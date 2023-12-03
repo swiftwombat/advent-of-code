@@ -8,15 +8,19 @@
             "type": "java",
             "name": "Launch Day 1",
             "request": "launch",
-            "mainClass": "com.swiftwombat.adventofcode.Main",
-            "args": [1]
+            "mainClass": "Main",
+            "args": [
+                1
+            ]
         },
         {
             "type": "java",
             "name": "Launch Day 2",
             "request": "launch",
-            "mainClass": "com.swiftwombat.adventofcode.Main",
-            "args": [2]
+            "mainClass": "Main",
+            "args": [
+                2
+            ]
         }
     ]
 }

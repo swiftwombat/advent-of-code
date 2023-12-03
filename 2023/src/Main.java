@@ -1,9 +1,5 @@
-package com.swiftwombat.adventofcode;
-
 import java.util.HashMap;
 import java.util.Map;
-
-import com.swiftwombat.adventofcode.day01.Day01;
 
 /**
  * @author Zachary Cockshutt
@@ -13,7 +9,7 @@ public class Main
 {
     private static final Map<Integer, Day> days = new HashMap<>()
     {{
-        put(1, new Day01());
+        put(1, new Day01()); put(2, new Day02());
     }};
 
     public static void main(String[] args)

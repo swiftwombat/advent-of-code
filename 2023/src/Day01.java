@@ -1,12 +1,8 @@
-package com.swiftwombat.adventofcode.day01;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
-
-import com.swiftwombat.adventofcode.Day;
 
 /**
  * @author Zachary Cockshutt
