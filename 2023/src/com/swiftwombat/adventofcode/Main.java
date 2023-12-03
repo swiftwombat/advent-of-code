@@ -1,0 +1,41 @@
+package com.swiftwombat.adventofcode;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.swiftwombat.adventofcode.day01.Day01;
+
+/**
+ * @author Zachary Cockshutt
+ * @since  2023-12-03
+ */
+public class Main
+{
+    private static final Map<Integer, Day> days = new HashMap<>()
+    {{
+        put(1, new Day01());
+    }};
+
+    public static void main(String[] args)
+    {
+        try
+        {
+            if (args.length < 1) { err("Invalid number of args."); }
+            run(Integer.parseInt(args[0]));
+        }
+        catch (Exception e) { err(e.toString()); }
+    }
+
+    private static void run(int dayNumber)
+    {
+        var day = days.get(dayNumber);
+        if (day == null) { err("Day not found."); }
+        day.run();
+    }
+
+    private static void err(String msg)
+    {
+        System.err.printf("Error: %s\n",msg);
+        System.exit(1);
+    }
+}
