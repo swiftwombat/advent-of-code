@@ -6,11 +6,11 @@ This year will be coded in Java.
 ## Calender
 |     |     |     |     |     |
 | :-: | :-: | :-: | :-: | :-: |
-[1](#day-1-trebuchet)<br>&#11088;/&#11088; | [2](#day-2-cube-conundrum)<br>&#11088;/&#11088; | [3](#day-3-gear-ratios)<br>&#11088;/&#11088; | [4](#day-4-scratchcards)<br>&#11034; / &#11034;  | [5]()<br>&#11034; / &#11034;
-[6]()<br>&#11034; / &#11034; | [7]()<br>&#11034; / &#11034; | [8]()<br>&#11034; / &#11034;  | [9]()<br>&#11034; / &#11034; | [10]()<br>&#11034; / &#11034;  
-[11]()<br>&#11034; / &#11034; | [12]()<br>&#11034; / &#11034; | [13]()<br>&#11034; / &#11034;  | [14]()<br>&#11034; / &#11034;  | [15]()<br>&#11034; / &#11034;
-[16]()<br>&#11034; / &#11034; | [17]()<br>&#11034; / &#11034; | [18]()<br>&#11034; / &#11034;  | [19]()<br>&#11034; / &#11034;  | [20]()<br>&#11034; / &#11034;
-[21]()<br>&#11034; / &#11034; | [22]()<br>&#11034; / &#11034; | [23]()<br>&#11034; / &#11034;  | [24]()<br>&#11034; / &#11034;  | [25]()<br>&#11034; / &#11034;
+[1](#day-1-trebuchet)<br>⭐/⭐ | [2](#day-2-cube-conundrum)<br>⭐/⭐ | [3](#day-3-gear-ratios)<br>⭐/⭐ | [4](#day-4-scratchcards)<br>⭐/ ⬚  | [5]()<br>⬚ / ⬚
+[6]()<br>⬚ / ⬚ | [7]()<br>⬚ / ⬚ | [8]()<br>⬚ / ⬚  | [9]()<br>⬚ / ⬚ | [10]()<br>⬚ / ⬚  
+[11]()<br>⬚ / ⬚ | [12]()<br>⬚ / ⬚ | [13]()<br>⬚ / ⬚  | [14]()<br>⬚ / ⬚  | [15]()<br>⬚ / ⬚
+[16]()<br>⬚ / ⬚ | [17]()<br>⬚ / ⬚ | [18]()<br>⬚ / ⬚  | [19]()<br>⬚ / ⬚  | [20]()<br>⬚ / ⬚
+[21]()<br>⬚ / ⬚ | [22]()<br>⬚ / ⬚ | [23]()<br>⬚ / ⬚  | [24]()<br>⬚ / ⬚  | [25]()<br>⬚ / ⬚
 
 <br />
 
@@ -37,7 +37,7 @@ treb7uchet
 ```
 In this example, the calibration values of these four lines are 12, 38, 15, and 77. Adding these together produces 142.
 
-Consider your entire calibration document. What is the sum of all of the calibration values?
+Consider your entire calibration document. __What is the sum of all of the calibration values?__
 
 ### Part 2
 
@@ -56,7 +56,7 @@ zoneight234
 ```
 In this example, the calibration values are 29, 83, 13, 24, 42, 14, and 76. Adding these together produces 281.
 
-What is the sum of all of the calibration values?
+__What is the sum of all of the calibration values?__
 
 <br/>
 
@@ -87,7 +87,7 @@ The Elf would first like to know which games would have been possible if the bag
 
 In the example above, games 1, 2, and 5 would have been possible if the bag had been loaded with that configuration. However, game 3 would have been impossible because at one point the Elf showed you 20 red cubes at once; similarly, game 4 would also have been impossible because the Elf showed you 15 blue cubes at once. If you add up the IDs of the games that would have been possible, you get 8.
 
-Determine which games would have been possible if the bag had been loaded with only 12 red cubes, 13 green cubes, and 14 blue cubes. What is the sum of the IDs of those games?
+Determine which games would have been possible if the bag had been loaded with only 12 red cubes, 13 green cubes, and 14 blue cubes. __What is the sum of the IDs of those games?__
 
 ### Part 2
 The Elf says they've stopped producing snow because they aren't getting any water! He isn't sure why the water stopped; however, he can show you how to get to the water source to check it out for yourself. It's just up ahead!
@@ -110,7 +110,7 @@ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
 
 The power of a set of cubes is equal to the numbers of red, green, and blue cubes multiplied together. The power of the minimum set of cubes in game 1 is 48. In games 2-5 it was 12, 1560, 630, and 36, respectively. Adding up these five powers produces the sum 2286.
 
-For each game, find the minimum set of cubes that must have been present. What is the sum of the power of these sets?
+For each game, find the minimum set of cubes that must have been present. __What is the sum of the power of these sets?__
 
 <br/>
 
@@ -145,7 +145,7 @@ Here is an example engine schematic:
 ```
 In this schematic, two numbers are not part numbers because they are not adjacent to a symbol: 114 (top right) and 58 (middle right). Every other number is adjacent to a symbol and so is a part number; their sum is 4361.
 
-Of course, the actual engine schematic is much larger. What is the sum of all of the part numbers in the engine schematic?
+Of course, the actual engine schematic is much larger. __What is the sum of all of the part numbers in the engine schematic?__
 
 ### Part 2
 
@@ -176,7 +176,7 @@ Consider the same engine schematic again:
 
 In this schematic, there are two gears. The first is in the top left; it has part numbers 467 and 35, so its gear ratio is 16345. The second gear is in the lower right; its gear ratio is 451490. (The * adjacent to 617 is not a gear because it is only adjacent to one part number.) Adding up all of the gear ratios produces 467835.
 
-What is the sum of all of the gear ratios in your engine schematic?
+__What is the sum of all of the gear ratios in your engine schematic?__
 
 <br/>
 
@@ -216,4 +216,37 @@ Card 5 has no winning numbers, so it is worth no points.
 Card 6 has no winning numbers, so it is worth no points.
 So, in this example, the Elf's pile of scratchcards is worth 13 points.
 
-Take a seat in the large pile of colorful cards. How many points are they worth in total?
+Take a seat in the large pile of colorful cards. __How many points are they worth in total?__
+
+### Part 2
+
+Just as you're about to report your findings to the Elf, one of you realizes that the rules have actually been printed on the back of every card this whole time.
+
+There's no such thing as "points". Instead, scratchcards only cause you to win more scratchcards equal to the number of winning numbers you have.
+
+Specifically, you win copies of the scratchcards below the winning card equal to the number of matches. So, if card 10 were to have 5 matching numbers, you would win one copy each of cards 11, 12, 13, 14, and 15.
+
+Copies of scratchcards are scored like normal scratchcards and have the same card number as the card they copied. So, if you win a copy of card 10 and it has 5 matching numbers, it would then win a copy of the same cards that the original card 10 won: cards 11, 12, 13, 14, and 15. This process repeats until none of the copies cause you to win any more cards. (Cards will never make you copy a card past the end of the table.)
+
+This time, the above example goes differently:
+
+```
+Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
+Card 2: 13 32 20 16 61 | 61 30 68 82 17 32 24 19
+Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1
+Card 4: 41 92 73 84 69 | 59 84 76 51 58  5 54 83
+Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
+Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11
+```
+
+ - Card 1 has four matching numbers, so you win one copy each of the next four cards: cards 2, 3, 4, and 5.
+ - Your original card 2 has two matching numbers, so you win one copy each of cards 3 and 4.
+ - Your copy of card 2 also wins one copy each of cards 3 and 4.
+ - Your four instances of card 3 (one original and three copies) have two matching numbers, so you win four copies each of cards 4 and 5.
+ - Your eight instances of card 4 (one original and seven copies) have one matching number, so you win eight copies of card 5.
+ - Your fourteen instances of card 5 (one original and thirteen copies) have no matching numbers and win no more cards.
+ - Your one instance of card 6 (one original) has no matching numbers and wins no more cards.
+
+Once all of the originals and copies have been processed, you end up with 1 instance of card 1, 2 instances of card 2, 4 instances of card 3, 8 instances of card 4, 14 instances of card 5, and 1 instance of card 6. In total, this example pile of scratchcards causes you to ultimately have 30 scratchcards!
+
+Process all of the original and copied scratchcards until no more scratchcards are won. Including the original set of scratchcards, __how many total scratchcards do you end up with?__
