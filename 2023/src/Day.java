@@ -27,7 +27,7 @@ public abstract class Day
         void call(String line);
     }
 
-    protected void streamInput(StreamCallback callback) throws IOException 
+    protected void input(StreamCallback callback) throws IOException 
     {
         final var day = this.getClass().getSimpleName();
         final var fn = String.format("dat/%s.txt", day);

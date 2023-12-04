@@ -21,7 +21,7 @@ public class Day01 extends Day
     public String partOne() throws IOException
     {
         var sum = new AtomicInteger(0);
-        this.streamInput((s) -> sum.set(sum.get() + this.reduce(s)));
+        this.input((s) -> sum.set(sum.get() + this.reduce(s)));
         return sum.toString();
     }
 
@@ -30,7 +30,7 @@ public class Day01 extends Day
     {
         var sum = new AtomicInteger(0);
         var p = Pattern.compile("(?=(one|t(wo|hree)|f(our|ive)|s(ix|even)|eight|nine))");
-        this.streamInput((s) -> 
+        this.input((s) -> 
         {
             var matcher = p.matcher(s);
             s = matcher.replaceAll(m -> digitWords.get(m.group(1)));

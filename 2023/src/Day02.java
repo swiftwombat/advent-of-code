@@ -18,7 +18,7 @@ public class Day02 extends Day
     public String partOne() throws IOException
     {
         var sum = new AtomicInteger(0);
-        this.streamInput((s) ->
+        this.input((s) ->
         {
             var flag = 1;
             for (var set : s.split(";"))
@@ -36,7 +36,7 @@ public class Day02 extends Day
     public String partTwo() throws IOException
     {
         var sum = new AtomicInteger(0);
-        this.streamInput((s) -> 
+        this.input((s) -> 
         {
             int r = 0, g = 0, b = 0;
             for (var set : s.split(";"))
