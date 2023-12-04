@@ -6,7 +6,7 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch Day 1",
+            "name": "Day 1",
             "request": "launch",
             "mainClass": "Main",
             "args": [
@@ -15,11 +15,20 @@
         },
         {
             "type": "java",
-            "name": "Launch Day 2",
+            "name": "Day 2",
             "request": "launch",
             "mainClass": "Main",
             "args": [
                 2
+            ]
+        },
+        {
+            "type": "java",
+            "name": "Day 3",
+            "request": "launch",
+            "mainClass": "Main",
+            "args": [
+                3
             ]
         }
     ]
