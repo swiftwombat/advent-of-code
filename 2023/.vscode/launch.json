@@ -9,27 +9,28 @@
             "name": "Day 1",
             "request": "launch",
             "mainClass": "Main",
-            "args": [
-                1
-            ]
+            "args": [1]
         },
         {
             "type": "java",
             "name": "Day 2",
             "request": "launch",
             "mainClass": "Main",
-            "args": [
-                2
-            ]
+            "args": [2]
         },
         {
             "type": "java",
             "name": "Day 3",
             "request": "launch",
             "mainClass": "Main",
-            "args": [
-                3
-            ]
-        }
+            "args": [3]
+        },
+        {
+            "type": "java",
+            "name": "Day 4",
+            "request": "launch",
+            "mainClass": "Main",
+            "args": [4]
+        },
     ]
 }
