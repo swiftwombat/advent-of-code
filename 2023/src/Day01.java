@@ -10,10 +10,10 @@ import java.util.regex.Pattern;
  */
 public class Day01 extends Day
 {
-    private final static Map<String, String> digitWords = new HashMap<>()
+    private static final Map<String, String> digitWords = new HashMap<>()
     {{
-        put("one", "1");  put("two", "2");  put("three","3"); 
-        put("four", "4"); put("five", "5"); put("six", "6"); 
+        put("one",  "1"); put("two",  "2"); put("three","3"); 
+        put("four", "4"); put("five", "5"); put("six",  "6"); 
         put("seven","7"); put("eight","8"); put("nine", "9");
     }};
 
@@ -21,10 +21,7 @@ public class Day01 extends Day
     public String partOne() throws IOException
     {
         var sum = new AtomicInteger(0);
-        this.streamInput((s) -> {
-            var rs = sum.get() + this.reduce(s);
-            sum.set(rs);
-        });
+        this.streamInput((s) -> sum.set(sum.get() + this.reduce(s)));
         return sum.toString();
     }
 
@@ -33,11 +30,11 @@ public class Day01 extends Day
     {
         var sum = new AtomicInteger(0);
         var p = Pattern.compile("(?=(one|t(wo|hree)|f(our|ive)|s(ix|even)|eight|nine))");
-        this.streamInput((s) -> {
+        this.streamInput((s) -> 
+        {
             var matcher = p.matcher(s);
             s = matcher.replaceAll(m -> digitWords.get(m.group(1)));
-            var rs = sum.get() + this.reduce(s);
-            sum.set(rs);
+            sum.set(sum.get() + this.reduce(s));
         });
         return sum.toString();
     }
