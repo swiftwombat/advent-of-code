@@ -6,7 +6,7 @@ This year will be coded in Java.
 ## Calender
 |     |     |     |     |     |
 | :-: | :-: | :-: | :-: | :-: |
-[1](#day-1-trebuchet-↥)<br>⭐/⭐ | [2](#day-2-cube-conundrum-↥)<br>⭐/⭐ | [3](#day-3-gear-ratios-↥)<br>⭐/⭐ | [4](#day-4-scratchcards-↥)<br>⭐/⭐  | [5](#day-5-if-you-give-a-seed-a-fertilizer-↥)<br>⬚ / ⬚
+[1](#day-1-trebuchet)<br>⭐/⭐ | [2](#day-2-cube-conundrum)<br>⭐/⭐ | [3](#day-3-gear-ratios)<br>⭐/⭐ | [4](#day-4-scratchcards)<br>⭐/⭐  | [5](#day-5-if-you-give-a-seed-a-fertilizer)<br>⬚ / ⬚
 [6](#advent-of-code-2023)<br>⬚ / ⬚ | [7](#advent-of-code-2023)<br>⬚ / ⬚ | [8](#advent-of-code-2023)<br>⬚ / ⬚  | [9](#advent-of-code-2023)<br>⬚ / ⬚ | [10](#advent-of-code-2023)<br>⬚ / ⬚  
 [11](#advent-of-code-2023)<br>⬚ / ⬚ | [12](#advent-of-code-2023)<br>⬚ / ⬚ | [13](#advent-of-code-2023)<br>⬚ / ⬚  | [14](#advent-of-code-2023)<br>⬚ / ⬚  | [15](#advent-of-code-2023)<br>⬚ / ⬚
 [16](#advent-of-code-2023)<br>⬚ / ⬚ | [17](#advent-of-code-2023)<br>⬚ / ⬚ | [18](#advent-of-code-2023)<br>⬚ / ⬚  | [19](#advent-of-code-2023)<br>⬚ / ⬚  | [20](#advent-of-code-2023)<br>⬚ / ⬚
@@ -14,7 +14,7 @@ This year will be coded in Java.
 
 <br />
 
-## Day 1: Trebuchet?! [↥](#advent-of-code-2023)
+## Day 1: Trebuchet?!
 ### Part 1
 Something is wrong with global snow production, and you've been selected to take a look. The Elves have even given you a map; on it, they've used stars to mark the top fifty locations that are likely to be having problems.
 
@@ -60,7 +60,7 @@ __What is the sum of all of the calibration values?__
 
 <br/>
 
-## Day 2: Cube Conundrum [↥](#advent-of-code-2023)
+## Day 2: Cube Conundrum
 ### Part 1
 You're launched high into the atmosphere! The apex of your trajectory just barely reaches the surface of a large island floating in the sky. You gently land in a fluffy pile of leaves. It's quite cold, but you don't see much snow. An Elf runs over to greet you.
 
@@ -114,7 +114,7 @@ For each game, find the minimum set of cubes that must have been present. __What
 
 <br/>
 
-## Day 3: Gear Ratios [↥](#advent-of-code-2023)
+## Day 3: Gear Ratios
 ### Part 1
 
 You and the Elf eventually reach a gondola lift station; he says the gondola lift will take you up to the water source, but this is as far as he can bring you. You go inside.
@@ -180,7 +180,7 @@ __What is the sum of all of the gear ratios in your engine schematic?__
 
 <br/>
 
-## Day 4: Scratchcards [↥](#advent-of-code-2023)
+## Day 4: Scratchcards
 
 ### Part 1
 
@@ -253,7 +253,7 @@ Process all of the original and copied scratchcards until no more scratchcards a
 
 <br/>
 
-## Day 5: If You Give A Seed A Fertilizer [↥](#advent-of-code-2023)
+## Day 5: If You Give A Seed A Fertilizer
 
 ### Part 1
 
