@@ -1,4 +1,8 @@
+import static java.lang.Math.pow;
+
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -13,12 +17,11 @@ public class Day04 extends Day
         var sum = new AtomicInteger(0);
         this.input((s) -> 
         {
-            var score = 0;
-            var game = s.split(":")[1].split("\\|");
-            var winners = game[0].trim().split(" +");
-            var numbers = game[1].trim().split(" +");
-            for (var num : numbers) 
-                if (isWinner(winners, num)) { score += score==0 ? 1 : score; }
+            var game = s.split("(: +)|( \\| +)");
+            var sets = new String[2][];
+            for (var i = 1; i < game.length; i++) { sets[i-1] = game[i].split(" +"); }
+            var count = this.getWinCount(sets);
+            var score = (int)(count > 1 ? pow(2, count-1) : count);
             sum.set(sum.get() + score);
         });
         return sum.toString();
@@ -31,9 +34,10 @@ public class Day04 extends Day
         return sum.toString();
     }
 
-    private boolean isWinner(String[] arr, String str)
+    private int getWinCount(String[][] sets)
     {
-        for (var s : arr) { if (s.equals(str)) { return true; } }
-        return false;
+        var set = new HashSet<String>(Arrays.asList(sets[0]));
+        set.retainAll(Arrays.asList(sets[1]));
+        return set.size();
     }
 }
