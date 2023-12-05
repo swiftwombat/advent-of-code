@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author Zachary Cockshutt
- * @since  2023-12-03
+ * @since  2023-12-04
  */
 public class Day04 extends Day
 {
