@@ -2,6 +2,7 @@ import static java.lang.Math.pow;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -31,6 +32,24 @@ public class Day04 extends Day
     public String partTwo() throws IOException
     {
         var sum = new AtomicInteger(0);
+        var games = new HashMap<Integer, Integer>();
+        this.input((s) -> 
+        {
+            var game = s.split("(: +)|( \\| +)");
+            var id = Integer.parseInt(game[0].split(" +")[1]);
+            var c = games.get(id);
+            games.put(id, c == null ? 1 : c+1);
+            var sets = new String[2][];
+            for (var i = 1; i < game.length; i++) { sets[i-1] = game[i].split(" +"); }
+            var count = this.getWinCount(sets);
+            for (int i = 0; i < games.get(id); i++)
+                for (int j = id+1; j <= id+count; j++) 
+                { 
+                    var curr = games.get(j);
+                    games.put(j, curr == null ? 1 : curr+1); 
+                }
+            sum.set(sum.get() + games.get(id));
+        });
         return sum.toString();
     }
 
