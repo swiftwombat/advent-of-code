@@ -17,8 +17,8 @@ public class Day04 extends Day
         var sum = new AtomicInteger(0);
         this.input((s) -> 
         {
-            var count = this.getWinCount(s);
-            var score = (int)(count > 1 ? pow(2, count-1) : count);
+            var wins = this.getWinCount(s);
+            var score = (int)(wins > 1 ? pow(2, wins-1) : wins);
             sum.set(sum.get() + score);
         });
         return sum.toString();
