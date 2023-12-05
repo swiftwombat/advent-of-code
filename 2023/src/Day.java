@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.concurrent.Callable;
 
 /**
  * @author Zachary Cockshutt
@@ -14,14 +15,20 @@ public abstract class Day
 
     public void run()
     {
-        try
-        {
-            var rs = new String[] { partOne(), partTwo() };
-            for (int i = 0; i < 2; i++) { System.out.printf("P%d: %s\n", i+1, rs[i]); }
-        }
-        catch (IOException e) { e.printStackTrace(); }
+        var rs = new String[] { run(()->partOne()), run(()->partTwo()) };
+        for (int i = 0; i < 2; i++) { System.out.printf("P%d: %s\n", i+1, rs[i]); }
     }
-    
+
+    private String run(Callable<String> func)
+    {
+        var rs = "";
+        long t = System.nanoTime();
+        try                 { rs = func.call(); }
+        catch (Exception e) { e.printStackTrace(); }
+        rs = String.format("%-11s[%05.2f ms]", rs, (float)(System.nanoTime()-t)/1000000);
+        return rs;
+    }
+
     protected interface StreamCallback 
     {
         void call(String line);
