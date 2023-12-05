@@ -6,7 +6,7 @@ This year will be coded in Java.
 ## Calender
 |     |     |     |     |     |
 | :-: | :-: | :-: | :-: | :-: |
-[1](#day-1-trebuchet)<br>⭐/⭐ | [2](#day-2-cube-conundrum)<br>⭐/⭐ | [3](#day-3-gear-ratios)<br>⭐/⭐ | [4](#day-4-scratchcards)<br>⭐/⭐  | [5](#day-5-if-you-give-a-seed-a-fertilizer)<br>⬚ / ⬚
+[1](#day-1-trebuchet-↥)<br>⭐/⭐ | [2](#day-2-cube-conundrum-↥)<br>⭐/⭐ | [3](#day-3-gear-ratios-↥)<br>⭐/⭐ | [4](#day-4-scratchcards-↥)<br>⭐/⭐  | [5](#day-5-if-you-give-a-seed-a-fertilizer-↥)<br>⬚ / ⬚
 [6](#advent-of-code-2023)<br>⬚ / ⬚ | [7](#advent-of-code-2023)<br>⬚ / ⬚ | [8](#advent-of-code-2023)<br>⬚ / ⬚  | [9](#advent-of-code-2023)<br>⬚ / ⬚ | [10](#advent-of-code-2023)<br>⬚ / ⬚  
 [11](#advent-of-code-2023)<br>⬚ / ⬚ | [12](#advent-of-code-2023)<br>⬚ / ⬚ | [13](#advent-of-code-2023)<br>⬚ / ⬚  | [14](#advent-of-code-2023)<br>⬚ / ⬚  | [15](#advent-of-code-2023)<br>⬚ / ⬚
 [16](#advent-of-code-2023)<br>⬚ / ⬚ | [17](#advent-of-code-2023)<br>⬚ / ⬚ | [18](#advent-of-code-2023)<br>⬚ / ⬚  | [19](#advent-of-code-2023)<br>⬚ / ⬚  | [20](#advent-of-code-2023)<br>⬚ / ⬚
