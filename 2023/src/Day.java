@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.Callable;
 
 /**
@@ -29,9 +30,11 @@ public abstract class Day
         return rs;
     }
 
-    protected interface StreamCallback 
+    protected String[] input() throws IOException
     {
-        void call(String line);
+        var lines = new ArrayList<String>();
+        this.input((s) -> lines.add(s));
+        return lines.toArray(new String[0]);
     }
 
     protected void input(StreamCallback callback) throws IOException 
@@ -41,5 +44,10 @@ public abstract class Day
         final var br = new BufferedReader(new FileReader(fn));
         while (br.ready()) { callback.call(br.readLine()); }
         br.close();
+    }
+
+    protected interface StreamCallback 
+    {
+        void call(String line);
     }
 }
