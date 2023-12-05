@@ -10,23 +10,25 @@ public class Day03 extends Day
     @Override
     public String partOne() throws IOException
     {
-        int sum = 0;
-        var matrix = getCharMatrix();
-        for (int i = 0; i < matrix.length; i++)
-            for (int j = 0; j < matrix[0].length; j++)
-                if (isSymbol(matrix[i][j])) { sum += getAdjSum(matrix, i, j); }
+        var sum = sumSymbolAdj(false);
         return String.valueOf(sum);
     }
 
     @Override
     public String partTwo() throws IOException
     {
+        var sum = sumSymbolAdj(true);
+        return String.valueOf(sum);
+    }
+
+    private int sumSymbolAdj(boolean isPartTwo) throws IOException
+    {
         int sum = 0;
         var matrix = getCharMatrix();
         for (int i = 0; i < matrix.length; i++)
             for (int j = 0; j < matrix[0].length; j++)
-                if (isSymbol(matrix[i][j])) { sum += getGearRatio(matrix, i, j); }
-        return String.valueOf(sum);
+                if (isSymbol(matrix[i][j])) { sum += getAdj(matrix, i, j, isPartTwo); }
+        return sum;
     }
 
     private char[][] getCharMatrix() throws IOException
@@ -36,26 +38,17 @@ public class Day03 extends Day
         return matrix.toArray(new char[matrix.size()][]);
     }
 
-    private int getAdjSum(char[][] matrix, int i, int j)
+    private int getAdj(char[][] matrix, int i, int j, boolean isPartTwo)
     {
-        int sum = 0, n = matrix.length-1, m = matrix[0].length-1;
-        for (int dx = (i > 0 ? -1 : 0); dx <= (i < n ? 1 : 0); ++dx)
-            for (int dy = (j > 0 ? -1 : 0); dy <= (j < m ? 1 : 0); ++dy)
-                if (isDigit(matrix[i+dx][j+dy])) { sum += sprawlDigit(matrix[i+dx], j+dy); }
-        return sum;
-    }
-    
-    private int getGearRatio(char[][] matrix, int i, int j)
-    {
-        int ratio = 1, count = 0, n = matrix.length-1, m = matrix[0].length-1;
+        int sum = 0, ratio = 1, count = 0, n = matrix.length-1, m = matrix[0].length-1;
         for (int dx = (i > 0 ? -1 : 0); dx <= (i < n ? 1 : 0); ++dx)
             for (int dy = (j > 0 ? -1 : 0); dy <= (j < m ? 1 : 0); ++dy)
                 if (isDigit(matrix[i+dx][j+dy])) 
                 { 
-                    ratio *= sprawlDigit(matrix[i+dx], j+dy);
-                    count++;
+                    var digit = sprawlDigit(matrix[i+dx], j+dy);
+                    sum += digit; ratio *= digit; count++;
                 }
-        return count == 2 ? ratio : 0;
+        return isPartTwo ? (count == 2 ? ratio : 0) : sum;
     }
 
     private int sprawlDigit(char[] row, int y)
