@@ -20,13 +20,10 @@ public class Day02 extends Day
         var sum = new AtomicInteger(0);
         this.input((s) ->
         {
-            var flag = 1;
-            for (var set : s.split(";"))
-            {
-                var rgb = processSet(set);
-                if (!rgb.isPossible()) { flag = 0; break; }
-            }
-            var id = Integer.parseInt(s.split(":")[0].split(" ")[1]) * flag;
+            var sets = s.split(";");
+            var possible = true;
+            for (int i = 0; i < sets.length && possible; i++) { possible = processSet(sets[i]).isPossible(); }
+            var id = possible ? Integer.parseInt(s.split(":")[0].split(" ")[1]) : 0;
             sum.set(sum.get() + id);
         });
         return sum.toString();
@@ -69,8 +66,9 @@ public class Day02 extends Day
     {
         private boolean isPossible()
         {
-            var isPossible = red <= MAX_RED && green <= MAX_GREEN && blue <= MAX_BLUE;
-            return isPossible;
+            return red   <= MAX_RED 
+                && green <= MAX_GREEN 
+                && blue  <= MAX_BLUE;
         }
     }
 }
