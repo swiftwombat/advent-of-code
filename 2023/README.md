@@ -1,5 +1,5 @@
 # Advent of Code 2023
-This is my first year of doing an advent of code. The details of this years challenges can be found on the [AoC 2023 webpage](https://adventofcode.com/2023). I have also copied each days brief to a README present in the folder for each day (linked in calender).
+This is my first year of doing Advent of Code. The details of this years challenges can be found on the [AoC 2023 webpage](https://adventofcode.com/2023). I have also copied each days brief into this README each of which are linked to via the advent calender below.
 
 This year will be coded in Java.
 
