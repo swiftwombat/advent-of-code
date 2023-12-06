@@ -39,5 +39,12 @@
             "mainClass": "Main",
             "args": [5]
         },
+        {
+            "type": "java",
+            "name": "Day 6",
+            "request": "launch",
+            "mainClass": "Main",
+            "args": [6]
+        },
     ]
 }
