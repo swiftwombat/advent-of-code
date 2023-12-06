@@ -2,6 +2,7 @@ import static java.lang.Math.min;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
 /**
@@ -73,11 +74,18 @@ public class Day05 extends Day
     {
         private long getMinLocation()
         {
-            var location = Long.MAX_VALUE;
-            for (var seed : seeds)
+            //var location = Long.MAX_VALUE;
+            var location = new AtomicLong(Long.MAX_VALUE);
+            Stream.of(seeds).parallel().forEach(seed -> {
                 for (long i = seed.start(); i <= seed.end(); i++)
-                    location = min(location, this.getLocation(i));
-            return location;
+                    location.set(min(location.get(), this.getLocation(i)));
+            });
+            // for (var seed : seeds)
+            // {
+            //     for (long i = seed.start(); i <= seed.end(); i++)
+            //         location = min(location, this.getLocation(i));
+            // }
+            return location.longValue();
         }
 
         private long getLocation(long seed)
