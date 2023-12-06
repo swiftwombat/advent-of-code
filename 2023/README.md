@@ -7,7 +7,7 @@ This year will be coded in Java.
 |     |     |     |     |     |
 | :-: | :-: | :-: | :-: | :-: |
 [1](#day-1-trebuchet)<br>⭐/⭐ | [2](#day-2-cube-conundrum)<br>⭐/⭐ | [3](#day-3-gear-ratios)<br>⭐/⭐ | [4](#day-4-scratchcards)<br>⭐/⭐  | [5](#day-5-if-you-give-a-seed-a-fertilizer)<br>⭐/⭐
-[6](#day-6-wait-for-it)<br>⬚ / ⬚ | [7](#advent-of-code-2023)<br>⬚ / ⬚ | [8](#advent-of-code-2023)<br>⬚ / ⬚  | [9](#advent-of-code-2023)<br>⬚ / ⬚ | [10](#advent-of-code-2023)<br>⬚ / ⬚  
+[6](#day-6-wait-for-it)<br>⭐/⭐ | [7](#advent-of-code-2023)<br>⬚ / ⬚ | [8](#advent-of-code-2023)<br>⬚ / ⬚  | [9](#advent-of-code-2023)<br>⬚ / ⬚ | [10](#advent-of-code-2023)<br>⬚ / ⬚  
 [11](#advent-of-code-2023)<br>⬚ / ⬚ | [12](#advent-of-code-2023)<br>⬚ / ⬚ | [13](#advent-of-code-2023)<br>⬚ / ⬚  | [14](#advent-of-code-2023)<br>⬚ / ⬚  | [15](#advent-of-code-2023)<br>⬚ / ⬚
 [16](#advent-of-code-2023)<br>⬚ / ⬚ | [17](#advent-of-code-2023)<br>⬚ / ⬚ | [18](#advent-of-code-2023)<br>⬚ / ⬚  | [19](#advent-of-code-2023)<br>⬚ / ⬚  | [20](#advent-of-code-2023)<br>⬚ / ⬚
 [21](#advent-of-code-2023)<br>⬚ / ⬚ | [22](#advent-of-code-2023)<br>⬚ / ⬚ | [23](#advent-of-code-2023)<br>⬚ / ⬚  | [24](#advent-of-code-2023)<br>⬚ / ⬚  | [25](#advent-of-code-2023)<br>⬚ / ⬚
@@ -406,3 +406,23 @@ In the third race, you could hold the button for at least 11 milliseconds and no
 To see how much margin of error you have, determine the number of ways you can beat the record in each race; in this example, if you multiply these values together, you get 288 (4 * 8 * 9).
 
 __Determine the number of ways you could beat the record in each race. What do you get if you multiply these numbers together?__
+
+### Part 2
+
+As the race is about to start, you realize the piece of paper with race times and record distances you got earlier actually just has very bad kerning. There's really only one race - ignore the spaces between the numbers on each line.
+
+So, the example from before:
+
+```
+Time:      7  15   30
+Distance:  9  40  200
+```
+...now instead means this:
+
+```
+Time:      71530
+Distance:  940200
+```
+Now, you have to figure out how many ways there are to win this single race. In this example, the race lasts for 71530 milliseconds and the record distance you need to beat is 940200 millimeters. You could hold the button anywhere from 14 to 71516 milliseconds and beat the record, a total of 71503 ways!
+
+__How many ways can you beat the record in this one much longer race?__
