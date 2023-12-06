@@ -75,7 +75,8 @@ public class Day05 extends Day
         private long getMinLocation()
         {
             var location = new AtomicLong(Long.MAX_VALUE);
-            Stream.of(seeds).parallel().forEach(seed -> {
+            Stream.of(seeds).parallel().forEach(seed -> 
+            {
                 for (long i = seed.start(); i <= seed.end(); i++)
                     location.set(min(location.get(), this.getLocation(i)));
             });
