@@ -7,10 +7,10 @@ This year will be coded in Java.
 |     |     |     |     |     |
 | :-: | :-: | :-: | :-: | :-: |
 [1](#day-1-trebuchet)<br>⭐/⭐ | [2](#day-2-cube-conundrum)<br>⭐/⭐ | [3](#day-3-gear-ratios)<br>⭐/⭐ | [4](#day-4-scratchcards)<br>⭐/⭐  | [5](#day-5-if-you-give-a-seed-a-fertilizer)<br>⭐/⭐
-[6](#day-6-wait-for-it)<br>⭐/⭐ | [7](#day-7-camel-cards)<br>⭐/⭐ | [8](#advent-of-code-2023)<br>⬚ / ⬚  | [9](#advent-of-code-2023)<br>⬚ / ⬚ | [10](#advent-of-code-2023)<br>⬚ / ⬚  
-[11](#advent-of-code-2023)<br>⬚ / ⬚ | [12](#advent-of-code-2023)<br>⬚ / ⬚ | [13](#advent-of-code-2023)<br>⬚ / ⬚  | [14](#advent-of-code-2023)<br>⬚ / ⬚  | [15](#advent-of-code-2023)<br>⬚ / ⬚
-[16](#advent-of-code-2023)<br>⬚ / ⬚ | [17](#advent-of-code-2023)<br>⬚ / ⬚ | [18](#advent-of-code-2023)<br>⬚ / ⬚  | [19](#advent-of-code-2023)<br>⬚ / ⬚  | [20](#advent-of-code-2023)<br>⬚ / ⬚
-[21](#advent-of-code-2023)<br>⬚ / ⬚ | [22](#advent-of-code-2023)<br>⬚ / ⬚ | [23](#advent-of-code-2023)<br>⬚ / ⬚  | [24](#advent-of-code-2023)<br>⬚ / ⬚  | [25](#advent-of-code-2023)<br>⬚ / ⬚
+[6](#day-6-wait-for-it)<br>⭐/⭐ | [7](#day-7-camel-cards)<br>⭐/⭐ | [8](#day-8-haunted-wasteland)<br>⬚ / ⬚  | 9<br>⬚ / ⬚ | 10<br>⬚ / ⬚  
+11<br>⬚ / ⬚ | 12<br>⬚ / ⬚ | 13<br>⬚ / ⬚  | 14<br>⬚ / ⬚  | 15<br>⬚ / ⬚
+16<br>⬚ / ⬚ | 17<br>⬚ / ⬚ | 18<br>⬚ / ⬚  | 19<br>⬚ / ⬚  | 20<br>⬚ / ⬚
+21<br>⬚ / ⬚ | 22<br>⬚ / ⬚ | 23<br>⬚ / ⬚  | 24<br>⬚ / ⬚  | 25<br>⬚ / ⬚
 
 <br />
 
@@ -512,3 +512,42 @@ QQQJA 483
 With the new joker rule, the total winnings in this example are 5905.
 
 __Using the new joker rule, find the rank of every hand in your set. What are the new total winnings?__
+
+## Day 8: Haunted Wasteland
+
+### Part 1
+
+You're still riding a camel across Desert Island when you spot a sandstorm quickly approaching. When you turn to warn the Elf, she disappears before your eyes! To be fair, she had just finished warning you about ghosts a few minutes ago.
+
+One of the camel's pouches is labeled "maps" - sure enough, it's full of documents (your puzzle input) about how to navigate the desert. At least, you're pretty sure that's what they are; one of the documents contains a list of left/right instructions, and the rest of the documents seem to describe some kind of network of labeled nodes.
+
+It seems like you're meant to use the left/right instructions to navigate the network. Perhaps if you have the camel follow the same instructions, you can escape the haunted wasteland!
+
+After examining the maps for a bit, two nodes stick out: AAA and ZZZ. You feel like AAA is where you are now, and you have to follow the left/right instructions until you reach ZZZ.
+
+This format defines each node of the network individually. For example:
+
+```RL
+
+AAA = (BBB, CCC)
+BBB = (DDD, EEE)
+CCC = (ZZZ, GGG)
+DDD = (DDD, DDD)
+EEE = (EEE, EEE)
+GGG = (GGG, GGG)
+ZZZ = (ZZZ, ZZZ)
+```
+
+Starting with AAA, you need to look up the next element based on the next left/right instruction in your input. In this example, start with AAA and go right (R) by choosing the right element of AAA, CCC. Then, L means to choose the left element of CCC, ZZZ. By following the left/right instructions, you reach ZZZ in 2 steps.
+
+Of course, you might not find ZZZ right away. If you run out of left/right instructions, repeat the whole sequence of instructions as necessary: RL really means RLRLRLRLRLRLRLRL... and so on. For example, here is a situation that takes 6 steps to reach ZZZ:
+
+```
+LLR
+
+AAA = (BBB, BBB)
+BBB = (AAA, ZZZ)
+ZZZ = (ZZZ, ZZZ)
+```
+
+Starting at AAA, follow the left/right instructions. __How many steps are required to reach ZZZ?__

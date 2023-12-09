@@ -53,5 +53,12 @@
             "mainClass": "Main",
             "args": [7]
         },
+        {
+            "type": "java",
+            "name": "Day 8",
+            "request": "launch",
+            "mainClass": "Main",
+            "args": [8]
+        },
     ]
 }
