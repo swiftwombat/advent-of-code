@@ -7,7 +7,7 @@ This year will be coded in Java.
 |     |     |     |     |     |
 | :-: | :-: | :-: | :-: | :-: |
 [1](#day-1-trebuchet)<br>⭐/⭐ | [2](#day-2-cube-conundrum)<br>⭐/⭐ | [3](#day-3-gear-ratios)<br>⭐/⭐ | [4](#day-4-scratchcards)<br>⭐/⭐  | [5](#day-5-if-you-give-a-seed-a-fertilizer)<br>⭐/⭐
-[6](#day-6-wait-for-it)<br>⭐/⭐ | [7](#day-7-camel-cards)<br>⭐/⭐ | [8](#day-8-haunted-wasteland)<br>⭐/⭐  | [9](#day-9-mirage-maintenance)<br>⬚ / ⬚ | 10<br>⬚ / ⬚  
+[6](#day-6-wait-for-it)<br>⭐/⭐ | [7](#day-7-camel-cards)<br>⭐/⭐ | [8](#day-8-haunted-wasteland)<br>⭐/⭐  | [9](#day-9-mirage-maintenance)<br>⭐/⭐ | 10<br>⬚ / ⬚  
 11<br>⬚ / ⬚ | 12<br>⬚ / ⬚ | 13<br>⬚ / ⬚  | 14<br>⬚ / ⬚  | 15<br>⬚ / ⬚
 16<br>⬚ / ⬚ | 17<br>⬚ / ⬚ | 18<br>⬚ / ⬚  | 19<br>⬚ / ⬚  | 20<br>⬚ / ⬚
 21<br>⬚ / ⬚ | 22<br>⬚ / ⬚ | 23<br>⬚ / ⬚  | 24<br>⬚ / ⬚  | 25<br>⬚ / ⬚
@@ -664,3 +664,25 @@ So, the next value of the third history is 68.
 If you find the next value for each history in this example and add them together, you get 114.
 
 Analyze your OASIS report and extrapolate the next value for each history. What is the sum of these extrapolated values?
+
+### Part 2
+
+Of course, it would be nice to have even more history included in your report. Surely it's safe to just extrapolate backwards as well, right?
+
+For each history, repeat the process of finding differences until the sequence of differences is entirely zero. Then, rather than adding a zero to the end and filling in the next values of each previous sequence, you should instead add a zero to the beginning of your sequence of zeroes, then fill in new first values for each previous sequence.
+
+In particular, here is what the third example history looks like when extrapolating back in time:
+
+```
+5  10  13  16  21  30  45
+  5   3   3   5   9  15
+   -2   0   2   4   6
+      2   2   2   2
+        0   0   0
+```
+
+Adding the new values on the left side of each sequence from bottom to top eventually reveals the new left-most history value: 5.
+
+Doing this for the remaining example data above results in previous values of -3 for the first history and 0 for the second history. Adding all three new values together produces 2.
+
+Analyze your OASIS report again, this time extrapolating the previous value for each history. __What is the sum of these extrapolated values?__
