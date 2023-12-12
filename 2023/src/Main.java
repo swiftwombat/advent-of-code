@@ -10,7 +10,7 @@ public class Main
     private static final Map<Integer, Day> days = new HashMap<>()
     {{
         put(1, new Day01()); put(2, new Day02()); put(3, new Day03()); put(4, new Day04()); put(5, new Day05());
-        put(6, new Day06()); put(7, new Day07()); put(8, new Day08()); put(9, new Day09());
+        put(6, new Day06()); put(7, new Day07()); put(8, new Day08()); put(9, new Day09()); put(10,new Day10());
     }};
 
     public static void main(String[] args)

@@ -64,5 +64,12 @@
             "mainClass": "Main",
             "args": [9]
         },
+        {
+            "type": "java",
+            "name": "Day 10",
+            "request": "launch",
+            "mainClass": "Main",
+            "args": [10]
+        },
     ]
 }
