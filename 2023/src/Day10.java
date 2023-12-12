@@ -2,7 +2,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author Zachary Cockshutt
@@ -23,20 +22,43 @@ public class Day10 extends Day
     @Override
     public String partOne() throws IOException
     {
-        var sum = new AtomicInteger(0);
+        int sum = 0;
         var matrix = getCharMatrix();
-        var start = getStartingPoint(matrix);
-        return sum.toString();
+        var curr = getStartingPoint(matrix);
+        var dir = S;
+        while (true)
+        {
+            sum++;
+            var x = curr.x + dir.y;
+            var y = curr.y + dir.x;
+            if (matrix[x][y] == 'S') { break; }
+            var pipe = pipes.get(matrix[x][y]);
+            dir = pipe.getExit(dir);
+            curr = new Point(x, y);
+        }
+        return String.valueOf(sum/2);
     }
 
     @Override
     public String partTwo() throws IOException
     {
-        var sum = new AtomicInteger(0);
-        this.input(s -> {
-            
-        });
-        return sum.toString();
+        int sum = 0;
+        var matrix = getCharMatrix();
+        var curr = getStartingPoint(matrix);
+        var path = new ArrayList<Point>();
+        var dir = S;
+        while (true)
+        {
+            sum++;
+            path.add(curr);
+            var x = curr.x + dir.y;
+            var y = curr.y + dir.x;
+            if (matrix[x][y] == 'S') { break; }
+            var pipe = pipes.get(matrix[x][y]);
+            dir = pipe.getExit(dir);
+            curr = new Point(x, y);
+        }
+        return String.valueOf(sum/2);
     }
 
     private char[][] getCharMatrix() throws IOException
@@ -65,7 +87,15 @@ public class Day10 extends Day
         }
     }
 
-    private record Pipe(Direction a, Direction b) {}
+    private record Pipe(Direction a, Direction b) 
+    {
+        private Direction getExit(Direction entry)
+        {
+            var x = entry.x * -1;
+            var y = entry.y * -1;
+            return a.x == x && a.y == y ? b : a;
+        }
+    }
 
     private static enum Direction
     {
