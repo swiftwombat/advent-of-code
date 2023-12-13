@@ -7,7 +7,7 @@ This year will be coded in Java.
 |     |     |     |     |     |
 | :-: | :-: | :-: | :-: | :-: |
 [1](#day-1-trebuchet)<br>⭐/⭐ | [2](#day-2-cube-conundrum)<br>⭐/⭐ | [3](#day-3-gear-ratios)<br>⭐/⭐ | [4](#day-4-scratchcards)<br>⭐/⭐  | [5](#day-5-if-you-give-a-seed-a-fertilizer)<br>⭐/⭐
-[6](#day-6-wait-for-it)<br>⭐/⭐ | [7](#day-7-camel-cards)<br>⭐/⭐ | [8](#day-8-haunted-wasteland)<br>⭐/⭐  | [9](#day-9-mirage-maintenance)<br>⭐/⭐ | [10](#day-10-pipe-maze)<br>⭐/ ⬚  
+[6](#day-6-wait-for-it)<br>⭐/⭐ | [7](#day-7-camel-cards)<br>⭐/⭐ | [8](#day-8-haunted-wasteland)<br>⭐/⭐  | [9](#day-9-mirage-maintenance)<br>⭐/⭐ | [10](#day-10-pipe-maze)<br>⭐/⭐
 11<br>⬚ / ⬚ | 12<br>⬚ / ⬚ | 13<br>⬚ / ⬚  | 14<br>⬚ / ⬚  | 15<br>⬚ / ⬚
 16<br>⬚ / ⬚ | 17<br>⬚ / ⬚ | 18<br>⬚ / ⬚  | 19<br>⬚ / ⬚  | 20<br>⬚ / ⬚
 21<br>⬚ / ⬚ | 22<br>⬚ / ⬚ | 23<br>⬚ / ⬚  | 24<br>⬚ / ⬚  | 25<br>⬚ / ⬚
