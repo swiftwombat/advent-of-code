@@ -26,7 +26,7 @@ public abstract class Day
         long t = System.nanoTime();
         try                 { rs = func.call(); }
         catch (Exception e) { e.printStackTrace(); }
-        rs = String.format("%-11s[%05.2f ms]", rs, (float)(System.nanoTime()-t)/1000000);
+        rs = String.format("%-13s[%05.2f ms]", rs, (float)(System.nanoTime()-t)/1000000);
         return rs;
     }
 
