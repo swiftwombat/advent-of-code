@@ -1,5 +1,4 @@
 import static java.lang.Math.max;
-
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
@@ -22,7 +21,7 @@ public class Day02 extends Day
         {
             var sets = s.split(";");
             var possible = true;
-            for (int i = 0; i < sets.length && possible; i++) { possible = processSet(sets[i]).isPossible(); }
+            for (int i = 0; i < sets.length && possible; i++) { possible = parseSet(sets[i]).isPossible(); }
             var id = possible ? Integer.parseInt(s.split(":")[0].split(" ")[1]) : 0;
             sum.set(sum.get() + id);
         });
@@ -36,12 +35,12 @@ public class Day02 extends Day
         this.input((s) -> 
         {
             int r = 0, g = 0, b = 0;
-            for (var set : s.split(";"))
+            for (var str : s.split(";"))
             {
-                var rgb = processSet(set);
-                r = max(r, rgb.red);
-                g = max(g, rgb.green);
-                b = max(b, rgb.blue);
+                var set = parseSet(str);
+                r = max(r, set.red);
+                g = max(g, set.green);
+                b = max(b, set.blue);
             }
             var power = r * b * g;
             sum.set(sum.get() + power);
@@ -49,10 +48,10 @@ public class Day02 extends Day
         return sum.toString();
     }
 
-    private Set processSet(String set)
+    private Set parseSet(String s)
     {
         var rgb = new int[3];
-        for (int i=0; i<3; i++) { rgb[i] = this.getColourCount(rgbRgx[i], set); }
+        for (int i=0; i<3; i++) { rgb[i] = this.getColourCount(rgbRgx[i], s); }
         return new Set(rgb[0], rgb[1], rgb[2]);
     }
     
