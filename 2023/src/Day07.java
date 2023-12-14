@@ -1,5 +1,7 @@
+import static java.lang.Integer.parseInt;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 
@@ -9,52 +11,42 @@ import java.util.HashMap;
  */
 public class Day07 extends Day
 {
-    private final static String RANKS = "AKQJT98765432";
-    private final static String RANKS_JOKER = "AKQT98765432J";
+    private final static String RANKS = "AKQJT98765432", RANKS_JOKER = "AKQT98765432J";
 
     @Override
     public String partOne() throws IOException
     {
-        int sum = 0;
-        var hands = new ArrayList<Hand>();
-        this.input((s) -> hands.add(parseHand(s)));
-        hands.sort(new HandComparator(false));
-        for (int i = 0; i < hands.size(); i++) { sum += hands.get(i).bid * (i+1); }
-        return String.valueOf(sum);
+        var hands = parseHands(false);
+        int winnings = getTotalWinnings(hands, RANKS);
+        return String.valueOf(winnings);
     }
 
     @Override
     public String partTwo() throws IOException
     {
-        int sum = 0;
-        var hands = new ArrayList<Hand>();
-        this.input((s) -> 
-        {
-            var cards = s.split(" ")[0];
-            var unjokerd = s.replace('J', charCounter(cards));
-            var tmp = parseHand(unjokerd);
-            var hand = new Hand(cards.toCharArray(), tmp.bid(), tmp.type());
-            hands.add(hand);
-        });
-        hands.sort(new HandComparator(true));
-        for (int i = 0; i < hands.size(); i++) { sum += hands.get(i).bid * (i+1); }
-        return String.valueOf(sum);
+        var hands = parseHands(true);
+        int winnings = getTotalWinnings(hands, RANKS_JOKER);
+        return String.valueOf(winnings);
     }
 
-    private Hand parseHand(String s)
+    private Hand[] parseHands(boolean isPartTwo) throws IOException
     {
-        var hand = s.split(" ");
-        var cards = hand[0].toCharArray();
-        var bid = Integer.parseInt(hand[1]);
-        var type = parseHandType(cards);
-        return new Hand(cards, bid, type);
+        var hands = new ArrayList<Hand>();
+        this.input((s) ->
+        {
+            var input = s.split(" ");
+            var cards = isPartTwo ? input[0].replace('J', getBestCard(input[0])) : input[0];
+            var type = parseHandType(cards);
+            hands.add(new Hand(input[0].toCharArray(), parseInt(input[1]), type));
+        });
+        return hands.toArray(Hand[]::new);
     }
 
-    private int parseHandType(char[] cards)
+    private int parseHandType(String cards)
     {
         var max = 0;
         var map = new HashMap<Character, Integer>();
-        for (var c : cards) 
+        for (var c : cards.toCharArray()) 
         { 
             var i = map.containsKey(c) ? map.get(c)+1 : 1;
             if (i > max) { max = i; };
@@ -63,23 +55,32 @@ public class Day07 extends Day
         return map.size() - max;
     }
 
-    private char charCounter(String input){
+    private char getBestCard(String cards)
+    {
         int max = 0;
-        char maxChar = '\0'; // in case it's an empty string, ignore if you don't understand
+        char maxChar = '\0';
         var ranks = RANKS_JOKER.substring(0, RANKS_JOKER.length()-1).toCharArray();
-        for(var c : ranks) {
-            int diff = input.length() - input.replace("" + c, "").length();
-            if(diff > max) {
-                maxChar = c;
-                max = diff;
-            }
+        for(var r : ranks) 
+        {
+            int diff = cards.length() - cards.replace(""+r, "").length();
+            if(diff <= max) { continue; }
+            maxChar = r; max = diff;
         }
         return maxChar;
     }
 
+    private int getTotalWinnings(Hand[] hands, String ranks)
+    {
+        int sum = 0;
+        var list = new ArrayList<>(Arrays.asList(hands));
+        list.sort(new HandComparator(ranks));
+        for (int i=0; i<list.size(); i++) { sum += list.get(i).bid * (i+1); }
+        return sum;
+    }
+
     private record Hand(char[] cards, int bid, int type) {}
 
-    private record HandComparator(boolean hasJokers) implements Comparator<Hand>
+    private record HandComparator(String ranks) implements Comparator<Hand>
     {
         @Override
         public int compare(Hand a, Hand b)
@@ -88,7 +89,6 @@ public class Day07 extends Day
             if (a.type > b.type) { return -1; }
             for (int i = 0; i < 5; i++) 
             {
-                var ranks = hasJokers ? RANKS_JOKER : RANKS;
                 var c = ranks.indexOf(a.cards[i]);
                 var o = ranks.indexOf(b.cards[i]);
                 if (c == o) { continue; }
