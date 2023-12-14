@@ -1,5 +1,8 @@
+import static java.lang.Math.abs;
+import static java.lang.Math.ceil;
+import static java.lang.Math.floor;
 import static java.lang.Math.sqrt;
-
+import static java.lang.Long.parseLong;
 import java.io.IOException;
 
 /**
@@ -13,33 +16,15 @@ public class Day06 extends Day
     {
         int product = 1;
         var races = parseRaces();
-        for (var race : races)
-        {
-            var t = race.time();
-            var d = race.record();
-            var x1 = Math.abs(Math.floor((-t + sqrt(t*t-4*-1*-d))/(2*-1)));
-            var x2 = Math.abs(Math.ceil((-t - sqrt(t*t-4*-1*-d))/(2*-1)));
-            var count = (x2-x1-1);
-            product *= count;
-        }
+        for (var race : races) { product *= race.permutations(); }
         return String.valueOf(product);
     }
 
     @Override
     public String partTwo() throws IOException
     {
-        var races = parseRaces();
-        String tstr = "", dstr = "";
-        for (var race : races) 
-        { 
-            tstr += race.time(); 
-            dstr += race.record();
-        }
-        var t = Long.parseLong(tstr);
-        var d = Long.parseLong(dstr);
-        var x1 = Math.abs(Math.floor((-t + sqrt(t*t-4*-1*-d))/(2*-1)));
-        var x2 = Math.abs(Math.ceil((-t - sqrt(t*t-4*-1*-d))/(2*-1)));
-        var count = (long)(x2-x1-1);
+        var race = parseRace();
+        var count = race.permutations();
         return String.valueOf(count);
     }
 
@@ -47,16 +32,30 @@ public class Day06 extends Day
     {
         var input = input();
         var nums = new String[2][];
-        for (int i = 0; i < 2; i++) { nums[i] = input[i].split(": +")[1].split(" +"); }
+        for (int i=0; i<2; i++) { nums[i] = input[i].split(": +")[1].split(" +"); }
         var races = new Race[nums[0].length];
-        for (int i = 0; i < races.length; i++)  
-        { 
-            var time = Integer.parseInt(nums[0][i]);
-            var record = Integer.parseInt(nums[1][i]);
-            races[i] = new Race(time, record); 
-        }
+        for (int i=0; i<races.length; i++) { races[i] = new Race(nums[0][i], nums[1][i]); }
         return races;
     }
 
-    private record Race(int time, int record) {}
+    private Race parseRace() throws IOException
+    {
+        var input = input();
+        for (int i=0; i<input.length; i++) { input[i] = input[i].replaceAll("\\D+", ""); }
+        return new Race(input[0], input[1]);
+    }
+
+    private record Race(long time, long record) 
+    {
+        private Race(String t, String r) { this(parseLong(t), parseLong(r)); }
+
+        private long permutations()
+        {
+            long b = -this.time, c = -this.record;
+            var det = b * b - 4 * -1 * c;
+            var x1 = abs(floor((b + sqrt(det))/(2*-1)));
+            var x2 = abs(ceil ((b - sqrt(det))/(2*-1)));
+            return (long)(x2-x1-1);
+        }
+    }
 }
