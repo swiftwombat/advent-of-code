@@ -10,18 +10,18 @@ public class Day03 extends Day
     @Override
     public String partOne() throws IOException
     {
-        var sum = sumSymbolAdj(false);
+        var sum = sumAdjSymbol(false);
         return String.valueOf(sum);
     }
 
     @Override
     public String partTwo() throws IOException
     {
-        var sum = sumSymbolAdj(true);
+        var sum = sumAdjSymbol(true);
         return String.valueOf(sum);
     }
 
-    private int sumSymbolAdj(boolean isPartTwo) throws IOException
+    private int sumAdjSymbol(boolean isPartTwo) throws IOException
     {
         int sum = 0;
         var matrix = getCharMatrix();
