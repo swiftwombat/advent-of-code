@@ -8,9 +8,9 @@ This year will be coded in Java.
 | :-: | :-: | :-: | :-: | :-: |
 [1](#day-1-trebuchet)<br>⭐/⭐ | [2](#day-2-cube-conundrum)<br>⭐/⭐ | [3](#day-3-gear-ratios)<br>⭐/⭐ | [4](#day-4-scratchcards)<br>⭐/⭐  | [5](#day-5-if-you-give-a-seed-a-fertilizer)<br>⭐/⭐
 [6](#day-6-wait-for-it)<br>⭐/⭐ | [7](#day-7-camel-cards)<br>⭐/⭐ | [8](#day-8-haunted-wasteland)<br>⭐/⭐  | [9](#day-9-mirage-maintenance)<br>⭐/⭐ | [10](#day-10-pipe-maze)<br>⭐/⭐
-[11](#cosmic-expansion)<br>⭐/⭐ | [12](#day-12-hot-springs)<br>⬚ / ⬚ | 13<br>⬚ / ⬚  | 14<br>⬚ / ⬚  | 15<br>⬚ / ⬚
-16<br>⬚ / ⬚ | 17<br>⬚ / ⬚ | 18<br>⬚ / ⬚  | 19<br>⬚ / ⬚  | 20<br>⬚ / ⬚
-21<br>⬚ / ⬚ | 22<br>⬚ / ⬚ | 23<br>⬚ / ⬚  | 24<br>⬚ / ⬚  | 25<br>⬚ / ⬚
+[11](#cosmic-expansion)<br>⭐/⭐ | [12](#day-12-hot-springs)<br>⭐/⭐ | 13<br>⬚&nbsp;/&nbsp;⬚  | 14<br>⬚&nbsp;/&nbsp;⬚  | 15<br>⬚&nbsp;/&nbsp;⬚
+16<br>⬚&nbsp;/&nbsp;⬚ | 17<br>⬚&nbsp;/&nbsp;⬚ | 18<br>⬚&nbsp;/&nbsp;⬚  | 19<br>⬚&nbsp;/&nbsp;⬚  | 20<br>⬚&nbsp;/&nbsp;⬚
+21<br>⬚&nbsp;/&nbsp;⬚ | 22<br>⬚&nbsp;/&nbsp;⬚ | 23<br>⬚&nbsp;/&nbsp;⬚  | 24<br>⬚&nbsp;/&nbsp;⬚  | 25<br>⬚&nbsp;/&nbsp;⬚
 
 <br />
 
@@ -1090,4 +1090,35 @@ In this example, the number of possible arrangements for each row is:
 
 Adding all of the possible arrangement counts together produces a total of 21 arrangements.
 
-For each row, count all of the different arrangements of operational and broken springs that meet the given criteria. What is the sum of those counts?
+For each row, count all of the different arrangements of operational and broken springs that meet the given criteria. __What is the sum of those counts?__
+
+### Part 2
+
+As you look out at the field of springs, you feel like there are way more springs than the condition records list. When you examine the records, you discover that they were actually folded up this whole time!
+
+To unfold the records, on each row, replace the list of spring conditions with five copies of itself (separated by ?) and replace the list of contiguous groups of damaged springs with five copies of itself (separated by ,).
+
+So, this row:
+
+`.# 1`
+
+Would become:
+
+`.#?.#?.#?.#?.# 1,1,1,1,1`
+
+The first line of the above example would become:
+
+`???.###????.###????.###????.###????.### 1,1,3,1,1,3,1,1,3,1,1,3,1,1,3`
+
+In the above example, after unfolding, the number of possible arrangements for some rows is now much larger:
+
+- ???.### 1,1,3 - 1 arrangement
+- .??..??...?##. 1,1,3 - 16384 arrangements
+- ?#?#?#?#?#?#?#? 1,3,1,6 - 1 arrangement
+- ????.#...#... 4,1,1 - 16 arrangements
+- ????.######..#####. 1,6,5 - 2500 arrangements
+- ?###???????? 3,2,1 - 506250 arrangements
+
+After unfolding, adding all of the possible arrangement counts together produces 525152.
+
+Unfold your condition records; __what is the new sum of possible arrangement counts?__
