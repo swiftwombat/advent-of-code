@@ -14,22 +14,21 @@ public class Day09 extends Day
     @Override
     public String partOne() throws IOException
     {
-        var sum = new AtomicLong(0L);
-        this.input(s -> 
-        {
-            var sqnc = parseSequence(s, false);
-            sum.set(sum.get() + extrapolate(sqnc));
-        });
-        return sum.toString();
+        return getFutureSum(false);
     }
 
     @Override
     public String partTwo() throws IOException
     {
+        return getFutureSum(true);
+    }
+
+    private String getFutureSum(boolean isPartTwo) throws IOException
+    {
         var sum = new AtomicLong(0L);
         this.input(s -> 
         {
-            var sqnc = parseSequence(s, true);
+            var sqnc = parseSequence(s, isPartTwo);
             sum.set(sum.get() + extrapolate(sqnc));
         });
         return sum.toString();
