@@ -1,5 +1,9 @@
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author Zachary Cockshutt
@@ -11,12 +15,10 @@ public class Day09 extends Day
     public String partOne() throws IOException
     {
         var sum = new AtomicLong(0L);
-        this.input(s -> {
-            var data = s.split(" ");
-            var sqnc = new long[data.length];
-            for (int i = 0; i < data.length; i++) { sqnc[i] = Long.parseLong(data[i]); }
-            var future = extrapolate(sqnc);
-            sum.set(sum.get()+future);
+        this.input(s -> 
+        {
+            var sqnc = parseSequence(s, false);
+            sum.set(sum.get() + extrapolate(sqnc));
         });
         return sum.toString();
     }
@@ -25,15 +27,21 @@ public class Day09 extends Day
     public String partTwo() throws IOException
     {
         var sum = new AtomicLong(0L);
-        this.input(s -> {
-            var data = s.split(" ");
-            var sqnc = new long[data.length];
-            int j = data.length-1;
-            for (int i = 0; i < data.length; i++) { sqnc[i] = Long.parseLong(data[j--]); }
-            var future = extrapolate(sqnc);
-            sum.set(sum.get()+future);
+        this.input(s -> 
+        {
+            var sqnc = parseSequence(s, true);
+            sum.set(sum.get() + extrapolate(sqnc));
         });
         return sum.toString();
+    }
+
+    private long[] parseSequence(String s, boolean isPartTwo)
+    {
+        var sqnc = Stream.of(s.split(" "))
+            .map(Long::parseLong)
+            .collect(Collectors.toCollection(ArrayList::new));
+        if (isPartTwo) { Collections.reverse(sqnc); }
+        return sqnc.stream().mapToLong(x->x).toArray();
     }
 
     private long extrapolate(long[] sqnc)
