@@ -10,28 +10,26 @@ public class Day03 extends Day
     @Override
     public String partOne() throws IOException
     {
-        var sum = sumAdjSymbol(false);
-        return String.valueOf(sum);
+        return sumPartNumbers(false);
     }
 
     @Override
     public String partTwo() throws IOException
     {
-        var sum = sumAdjSymbol(true);
-        return String.valueOf(sum);
+        return sumPartNumbers(true);
     }
 
-    private int sumAdjSymbol(boolean isPartTwo) throws IOException
+    private String sumPartNumbers(boolean isPartTwo) throws IOException
     {
         int sum = 0;
-        var matrix = getCharMatrix();
+        var matrix = parseCharMatrix();
         for (int i = 0; i < matrix.length; i++)
             for (int j = 0; j < matrix[0].length; j++)
                 if (isSymbol(matrix[i][j])) { sum += getAdj(matrix, i, j, isPartTwo); }
-        return sum;
+        return String.valueOf(sum);
     }
 
-    private char[][] getCharMatrix() throws IOException
+    private char[][] parseCharMatrix() throws IOException
     {
         var matrix = new ArrayList<char[]>();
         this.input((s) -> matrix.add(s.toCharArray()));
@@ -53,8 +51,8 @@ public class Day03 extends Day
 
     private int sprawlDigit(char[] row, int y)
     {
-        var i = y;
-        var buff = row[i] + "";
+        int i = y;
+        String buff = row[i] + "";
         while (--i >= 0 && isDigit(row[i])) { buff = row[i]+buff; }
         while (++y < row.length && isDigit(row[y])) { buff += row[y]; row[y] = '.'; }
         return Integer.parseInt(buff);
