@@ -14,16 +14,16 @@ public class Day09 extends Day
     @Override
     public String partOne() throws IOException
     {
-        return getFutureSum(false);
+        return sumFutureReadings(false);
     }
 
     @Override
     public String partTwo() throws IOException
     {
-        return getFutureSum(true);
+        return sumFutureReadings(true);
     }
 
-    private String getFutureSum(boolean isPartTwo) throws IOException
+    private String sumFutureReadings(boolean isPartTwo) throws IOException
     {
         var sum = new AtomicLong(0L);
         this.input(s -> 
