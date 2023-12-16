@@ -11,7 +11,7 @@ public class Main
     {{
         put(1, new Day01()); put(2, new Day02()); put(3, new Day03()); put(4, new Day04()); put(5, new Day05());
         put(6, new Day06()); put(7, new Day07()); put(8, new Day08()); put(9, new Day09()); put(10,new Day10());
-        put(11,new Day11()); put(12,new Day12()); put(13,new Day13()); put(14,new Day14());
+        put(11,new Day11()); put(12,new Day12()); put(13,new Day13()); put(14,new Day14()); put(15,new Day15());
     }};
 
     public static void main(String[] args)
