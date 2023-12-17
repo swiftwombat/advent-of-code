@@ -16,5 +16,6 @@
         { "type": "java", "name": "Day 13", "request": "launch", "mainClass": "Main", "args": [13] },
         { "type": "java", "name": "Day 14", "request": "launch", "mainClass": "Main", "args": [14] },
         { "type": "java", "name": "Day 15", "request": "launch", "mainClass": "Main", "args": [15] },
+        { "type": "java", "name": "Day 16", "request": "launch", "mainClass": "Main", "args": [16] },
     ]
 }
