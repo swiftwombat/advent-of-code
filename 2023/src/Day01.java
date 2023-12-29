@@ -21,7 +21,7 @@ public class Day01 extends Day
     public String partOne() throws IOException
     {
         var sum = new AtomicInteger(0);
-        this.input((s) -> sum.set(sum.get() + this.reduce(s)));
+        this.input((s) -> sum.set(sum.get() + this.parseInt(s)));
         return sum.toString();
     }
 
@@ -34,12 +34,12 @@ public class Day01 extends Day
         {
             var matcher = p.matcher(s);
             s = matcher.replaceAll(m -> digitWords.get(m.group(1)));
-            sum.set(sum.get() + this.reduce(s));
+            sum.set(sum.get() + this.parseInt(s));
         });
         return sum.toString();
     }
 
-    private int reduce(String s)
+    private int parseInt(String s)
     {
         s = s.replaceAll("\\D", "");
         s = "" + s.charAt(0) + s.charAt(s.length()-1);
