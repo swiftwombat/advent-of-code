@@ -1,7 +1,7 @@
 # Advent of Code 2023
-This is my first year of doing Advent of Code! The details of each day's puzzle can be found on the [AoC 2023 webpage](https://adventofcode.com/2023). I have linked my solutions to these challenges via the calender below along with the stars I have gathered (max of two per puzzle, for a yearly total of 50).
+This is my first year of doing Advent of Code! The breif and input file for each day's puzzle can be found on the [AoC 2023 webpage](https://adventofcode.com/2023). I have linked my solutions to these challenges via the calender below along with the stars I have gathered (two per puzzle, for a yearly total of 50).
 
-This year will be coded in Java 19+.
+This year will be coded in Java 19.
 
 ## Calender
 |     |     |     |     |     |

@@ -52,7 +52,7 @@ public class Day06 extends Day
         private long permutations()
         {
             long b = -this.time, c = -this.record;
-            var det = b * b - 4 * -1 * c;
+            var det = b*b-4*-1*c;
             var x1 = abs(floor((b + sqrt(det))/(2*-1)));
             var x2 = abs(ceil ((b - sqrt(det))/(2*-1)));
             return (long)(x2-x1-1);
