@@ -1,0 +1,4 @@
+{
+    "dotnet.defaultSolution": "2024.sln",
+    "editor.inlayHints.enabled": "off"
+}
