@@ -8,7 +8,7 @@ using System.Diagnostics;
 class Program
 {
     private static readonly Dictionary<int, Day> days = new() {
-        { 1, new Day01() }
+        { 1, new Day01() }, { 2, new Day02() }
     };
 
     static void Main(string[] args)

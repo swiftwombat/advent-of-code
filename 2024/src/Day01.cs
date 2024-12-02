@@ -1,7 +1,4 @@
-﻿
-using System.Reflection.Emit;
-
-/**
+﻿/**
  * @author Zachary Cockshutt
  * @since  2024-12-01
  */
@@ -11,7 +8,7 @@ public class Day01 : Day
     {
         List<int> left = [];
         List<int> right = [];
-        Input(s =>
+        this.Input(s =>
         {
             var (l, r) = ParseIds(s);
             left.Add(l);
@@ -19,21 +16,20 @@ public class Day01 : Day
         });
         left.Sort();
         right.Sort();
-        long sum = left.Zip(right, (l,r) => Math.Abs(l-r)).Sum();
-        return sum.ToString();
+        long distance = left.Zip(right, (l,r) => Math.Abs(l-r)).Sum();
+        return distance.ToString();
     }
 
     public override string PartTwo()
     {
-
         List<int> left = [];
         Dictionary<int,int> right = [];
-        Input(s =>
+        this.Input(s =>
         {
             var (l, r) = ParseIds(s);
             left.Add(l);
-            int count = right.GetValueOrDefault(r) + 1;
-            if (!right.TryAdd(r, count)) { right[r] = count; };
+            int occurances = right.GetValueOrDefault(r) + 1;
+            if (!right.TryAdd(r, occurances)) { right[r] = occurances; };
         });
         return left.Sum(l => l * right.GetValueOrDefault(l)).ToString();
     }
