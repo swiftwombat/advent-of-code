@@ -6,7 +6,7 @@ This year will be coded in C# (.NET 9)
 ## Calender
 |     |     |     |     |     |
 | :-: | :-: | :-: | :-: | :-: |
-[1](src/Day01.cs)<br>⭐/⭐ |  2<br>⬚&nbsp;/&nbsp;⬚ |  3<br>⬚&nbsp;/&nbsp;⬚ |  4<br>⬚&nbsp;/&nbsp;⬚ |  5<br>⬚&nbsp;/&nbsp;⬚
+[1](src/Day01.cs)<br>⭐/⭐ |  [2](src/Day02.cs)<br>⭐/⭐ |  3<br>⬚&nbsp;/&nbsp;⬚ |  4<br>⬚&nbsp;/&nbsp;⬚ |  5<br>⬚&nbsp;/&nbsp;⬚
  6<br>⬚&nbsp;/&nbsp;⬚ |  7<br>⬚&nbsp;/&nbsp;⬚ |  8<br>⬚&nbsp;/&nbsp;⬚ |  9<br>⬚&nbsp;/&nbsp;⬚ | 10<br>⬚&nbsp;/&nbsp;⬚
 11<br>⬚&nbsp;/&nbsp;⬚ | 12<br>⬚&nbsp;/&nbsp;⬚ | 13<br>⬚&nbsp;/&nbsp;⬚ | 14<br>⬚&nbsp;/&nbsp;⬚ | 15<br>⬚&nbsp;/&nbsp;⬚
 16<br>⬚&nbsp;/&nbsp;⬚ | 17<br>⬚&nbsp;/&nbsp;⬚ | 18<br>⬚&nbsp;/&nbsp;⬚ | 19<br>⬚&nbsp;/&nbsp;⬚ | 20<br>⬚&nbsp;/&nbsp;⬚
