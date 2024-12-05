@@ -1,7 +1,7 @@
 ﻿
 /**
  * @author Zachary Cockshutt
- * @since  2024-12-03
+ * @since  2024-12-04
  */
 public class Day04 : Day
 {

@@ -37,5 +37,14 @@
           "console": "integratedTerminal",
           "args": "4"
         },
+        {
+          "name": "Day 5",
+          "type": "coreclr",
+          "request": "launch",
+          "preLaunchTask": "build",
+          "program": "${workspaceFolder}/bin/Debug/net9.0/2024.dll",
+          "console": "integratedTerminal",
+          "args": "5"
+        },
     ]
 }
