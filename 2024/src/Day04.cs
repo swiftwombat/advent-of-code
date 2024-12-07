@@ -40,8 +40,8 @@ public class Day04 : Day
         return count.ToString();
     }
 
-    private static string GetWord
-        (string[] matrix, int x, int y, int dx, int dy, int len)
+    private static string GetWord(
+        string[] matrix, int x, int y, int dx, int dy, int len)
     {
         string str = "";
         int n = matrix.Length;

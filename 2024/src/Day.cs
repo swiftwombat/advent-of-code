@@ -45,3 +45,14 @@ public abstract class Day
         foreach (var line in lines) { action(line); }
     }
 }
+
+public static class InputExtensions
+{
+    public static char[][] ToCharMatrix(this string[] input)
+    {
+        int i = 0;
+        var matrix = new char[input.Length][];
+        foreach (var line in input) { matrix[i++] = line.ToCharArray(); }
+        return matrix;
+    }
+}
