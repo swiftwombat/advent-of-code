@@ -1,6 +1,4 @@
 ﻿
-using System.Diagnostics;
-
 /**
  * @author Zachary Cockshutt
  * @since  2024-12-01
@@ -9,7 +7,7 @@ class Program
 {
     private static readonly Dictionary<int, Day> days = new() {
         { 1, new Day01() }, { 2, new Day02() }, { 3, new Day03() }, { 4, new Day04() }, { 5, new Day05() },
-        { 6, new Day06() }
+        { 6, new Day06() }, { 7, new Day07() }
     };
 
     static void Main(string[] args)
