@@ -1,9 +1,12 @@
-# Advent of Code 2024
+# C# Solutions
+These are a collection of AoC solutions (by year) that were solved using C#.
+
+## Advent of Code 2024
 This is my second year of doing Advent of Code and first year as a post graduate! The brief and input file for each day's puzzle can be found on the [AoC 2024 webpage](https://adventofcode.com/2024). I have linked my solutions to these challenges via the calender below along with the stars I have gathered (two per puzzle, for a yearly total of 50).
 
 This year will be coded in C# (.NET 9)
 
-## Calender
+### Calender
 |     |     |     |     |     |
 | :-: | :-: | :-: | :-: | :-: |
 [1](src/Day01.cs)<br>⭐/⭐ |  [2](src/Day02.cs)<br>⭐/⭐ |  [3](src/Day03.cs)<br>⭐/⭐ |  [4](src/Day04.cs)<br>⭐/⭐ |  [5](src/Day05.cs)<br>⭐/⭐
