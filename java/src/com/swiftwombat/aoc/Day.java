@@ -12,11 +12,14 @@ import java.util.concurrent.Callable;
  */
 public abstract class Day {
 
+    private String year = "2023";
+
     public abstract String partOne() throws IOException;
 
     public abstract String partTwo() throws IOException;
 
-    public void run() {
+    public void run(String year) {
+        this.year = year;
         var rs = new String[] { run(() -> partOne()), run(() -> partTwo()) };
         for (int i = 0; i < 2; i++) {
             System.out.printf("P%d: %s\n", i + 1, rs[i]);
@@ -43,7 +46,7 @@ public abstract class Day {
 
     protected void input(StreamCallback callback) throws IOException {
         final var day = this.getClass().getSimpleName();
-        final var fn = String.format("dat/%s.txt", day);
+        final var fn = String.format("dat/y%s/%s.txt", year, day);
         final var br = new BufferedReader(new FileReader(fn));
         while (br.ready()) {
             callback.call(br.readLine());
