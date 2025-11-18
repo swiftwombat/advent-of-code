@@ -1,0 +1,4 @@
+{
+    "dotnet.defaultSolution": "csharp.sln",
+    "editor.inlayHints.enabled": "off"
+}

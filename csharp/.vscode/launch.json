@@ -6,7 +6,7 @@
           "type": "coreclr",
           "request": "launch",
           "preLaunchTask": "build",
-          "program": "${workspaceFolder}/bin/Debug/net9.0/2024.dll",
+          "program": "${workspaceFolder}/bin/Debug/net9.0/csharp.dll",
           "console": "integratedTerminal",
           "args": "1"
         },
@@ -15,7 +15,7 @@
           "type": "coreclr",
           "request": "launch",
           "preLaunchTask": "build",
-          "program": "${workspaceFolder}/bin/Debug/net9.0/2024.dll",
+          "program": "${workspaceFolder}/bin/Debug/net9.0/csharp.dll",
           "console": "integratedTerminal",
           "args": "2"
         },
@@ -24,7 +24,7 @@
           "type": "coreclr",
           "request": "launch",
           "preLaunchTask": "build",
-          "program": "${workspaceFolder}/bin/Debug/net9.0/2024.dll",
+          "program": "${workspaceFolder}/bin/Debug/net9.0/csharp.dll",
           "console": "integratedTerminal",
           "args": "3"
         },
@@ -33,7 +33,7 @@
           "type": "coreclr",
           "request": "launch",
           "preLaunchTask": "build",
-          "program": "${workspaceFolder}/bin/Debug/net9.0/2024.dll",
+          "program": "${workspaceFolder}/bin/Debug/net9.0/csharp.dll",
           "console": "integratedTerminal",
           "args": "4"
         },
@@ -42,7 +42,7 @@
           "type": "coreclr",
           "request": "launch",
           "preLaunchTask": "build",
-          "program": "${workspaceFolder}/bin/Debug/net9.0/2024.dll",
+          "program": "${workspaceFolder}/bin/Debug/net9.0/csharp.dll",
           "console": "integratedTerminal",
           "args": "5"
         },
@@ -51,7 +51,7 @@
           "type": "coreclr",
           "request": "launch",
           "preLaunchTask": "build",
-          "program": "${workspaceFolder}/bin/Debug/net9.0/2024.dll",
+          "program": "${workspaceFolder}/bin/Debug/net9.0/csharp.dll",
           "console": "integratedTerminal",
           "args": "6"
         },
@@ -60,7 +60,7 @@
           "type": "coreclr",
           "request": "launch",
           "preLaunchTask": "build",
-          "program": "${workspaceFolder}/bin/Debug/net9.0/2024.dll",
+          "program": "${workspaceFolder}/bin/Debug/net9.0/csharp.dll",
           "console": "integratedTerminal",
           "args": "7"
         },
@@ -69,7 +69,7 @@
           "type": "coreclr",
           "request": "launch",
           "preLaunchTask": "build",
-          "program": "${workspaceFolder}/bin/Debug/net9.0/2024.dll",
+          "program": "${workspaceFolder}/bin/Debug/net9.0/csharp.dll",
           "console": "integratedTerminal",
           "args": "8"
         },
