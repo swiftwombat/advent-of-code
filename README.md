@@ -9,4 +9,4 @@
 | Year | Langauge | 1 - 12 | Total |
 | :--: | :------: | :---: | :----: |
 | [2025](cpp) | ![c++](https://img.shields.io/badge/C++-F34C7E) | ⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚ | 0 |
-> See why AOC was changes to be [12 puzzles](https://adventofcode.com/2025/about#faq_num_days) per year.
+> See why AOC was changed to be [12 puzzles](https://adventofcode.com/2025/about#faq_num_days) per year.
