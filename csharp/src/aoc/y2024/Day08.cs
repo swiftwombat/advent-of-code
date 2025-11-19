@@ -1,4 +1,5 @@
-﻿
+﻿namespace aoc.y2024;
+
 /**
  * @author Zachary Cockshutt
  * @since  2024-12-07
@@ -15,7 +16,7 @@ public class Day08 : Day
                 foreach (var p2 in set.Value)
                 {
                     if (p1 == p2) { continue; }
-                    var p3 = (2*p1.x-p2.x, 2*p1.y-p2.y);
+                    var p3 = (2 * p1.x - p2.x, 2 * p1.y - p2.y);
                     if (IsBounded(p3, map.Length)) { antinodes.Add(p3); }
                 }
         return antinodes.Count.ToString();
@@ -36,7 +37,7 @@ public class Day08 : Day
                     do
                     {
                         antinodes.Add(p2);
-                        var p3 = (2*p1.x-p2.x, 2*p1.y-p2.y);
+                        var p3 = (2 * p1.x - p2.x, 2 * p1.y - p2.y);
                         p2 = p1;
                         p1 = p3;
                     }
@@ -53,8 +54,8 @@ public class Day08 : Day
             for (int j = 0; j < n; j++)
             {
                 char id = map[i][j];
-                if (positions.TryAdd(id, [(i,j)])) { continue; }
-                if (id != '.') { positions[id].Add((i,j)); }
+                if (positions.TryAdd(id, [(i, j)])) { continue; }
+                if (id != '.') { positions[id].Add((i, j)); }
             }
         return positions;
     }

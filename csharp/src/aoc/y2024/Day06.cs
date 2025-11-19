@@ -1,4 +1,5 @@
-﻿
+﻿namespace aoc.y2024;
+
 /**
  * @author Zachary Cockshutt
  * @since  2024-12-06
@@ -33,7 +34,7 @@ public class Day06 : Day
     {
         int n = map.Length;
         (int dx, int dy) dir = (-1, 0);
-        HashSet<((int,int) pos, (int,int) dir)> visited = [(pos, dir)];
+        HashSet<((int, int) pos, (int, int) dir)> visited = [(pos, dir)];
         bool isLoop = false;
         while (!isLoop)
         {
@@ -50,7 +51,8 @@ public class Day06 : Day
     private static (int x, int y) FindStartPosition(char[][] map)
     {
         int x = 0, y = 0;
-        while ((y = Array.IndexOf(map[x++],'^')) == -1) {};
+        while ((y = Array.IndexOf(map[x++], '^')) == -1) { }
+        ;
         return (--x, y);
     }
 
@@ -58,10 +60,10 @@ public class Day06 : Day
     {
         return dir switch
         {
-            (0,  1) => (1,  0),
-            (1,  0) => (0, -1),
+            (0, 1) => (1, 0),
+            (1, 0) => (0, -1),
             (0, -1) => (-1, 0),
-            (-1, 0) => (0,  1),
+            (-1, 0) => (0, 1),
             _ => throw new Exception()
         };
     }

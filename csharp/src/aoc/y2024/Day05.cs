@@ -1,4 +1,5 @@
-﻿
+﻿namespace aoc.y2024;
+
 /**
  * @author Zachary Cockshutt
  * @since  2024-12-05
@@ -11,8 +12,8 @@ public class Day05 : Day
         string[][] pages = ParsePageLists(input);
         Comparer<string> ruleset = ParseRuleset(input);
         return pages
-            .Where(x => Enumerable.SequenceEqual(x, x.OrderBy(x=>x, ruleset)))
-            .Sum(x => int.Parse(x[x.Length/2]))
+            .Where(x => Enumerable.SequenceEqual(x, x.OrderBy(x => x, ruleset)))
+            .Sum(x => int.Parse(x[x.Length / 2]))
             .ToString();
     }
 
@@ -22,9 +23,9 @@ public class Day05 : Day
         string[][] pages = ParsePageLists(input);
         Comparer<string> ruleset = ParseRuleset(input);
         return pages
-            .Where(x => !Enumerable.SequenceEqual(x, x.OrderBy(x=>x, ruleset)))
+            .Where(x => !Enumerable.SequenceEqual(x, x.OrderBy(x => x, ruleset)))
             .Select(x => x.OrderBy(y => y, ruleset).ToArray())
-            .Sum(x => int.Parse(x[x.Length/2]))
+            .Sum(x => int.Parse(x[x.Length / 2]))
             .ToString();
     }
 

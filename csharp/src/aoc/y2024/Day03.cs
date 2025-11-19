@@ -1,4 +1,5 @@
-﻿
+﻿namespace aoc.y2024;
+
 using System.Text.RegularExpressions;
 
 /**
@@ -28,7 +29,7 @@ public class Day03 : Day
         {
             string val = m.Value;
             if (!val.StartsWith("mul")) { enabled = val.Equals("do()"); }
-            else if (enabled)           { total += Multiply(m); }
+            else if (enabled) { total += Multiply(m); }
         }
         return total.ToString();
     }
@@ -37,6 +38,6 @@ public class Day03 : Day
     {
         int a = int.Parse(match.Groups["a"].Value);
         int b = int.Parse(match.Groups["b"].Value);
-        return  a * b;
+        return a * b;
     }
 }

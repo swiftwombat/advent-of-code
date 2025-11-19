@@ -1,4 +1,5 @@
-﻿
+﻿namespace aoc.y2024;
+
 /**
  * @author Zachary Cockshutt
  * @since  2024-12-04
@@ -36,7 +37,7 @@ public class Day04 : Day
                 count += new string[] {
                     GetWord(matrix, x, y, 1, 1, len),
                     GetWord(matrix, x, y + buf, 1, -1, len),
-                }.All(x => IsMatch(x,match)) ? 1 : 0;
+                }.All(x => IsMatch(x, match)) ? 1 : 0;
         return count.ToString();
     }
 
@@ -45,7 +46,7 @@ public class Day04 : Day
     {
         string str = "";
         int n = matrix.Length;
-        if (y + dy * (len-1) >= n || y + dy * (len-1) < 0) { return ""; }
+        if (y + dy * (len - 1) >= n || y + dy * (len - 1) < 0) { return ""; }
         for (int i = 0; i < len; i++)
         {
             if (x >= n || x < 0) { return ""; }

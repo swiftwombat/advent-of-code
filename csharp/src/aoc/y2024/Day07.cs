@@ -1,4 +1,5 @@
-﻿
+﻿namespace aoc.y2024;
+
 /**
  * @author Zachary Cockshutt
  * @since  2024-12-07
@@ -42,9 +43,9 @@ public class Day07 : Day
         {
             _ when rhs > lhs => false,
             [] => rhs == lhs,
-            _  => Check(lhs, rhs * nums[0], nums[1..], isPart2)
+            _ => Check(lhs, rhs * nums[0], nums[1..], isPart2)
                || Check(lhs, rhs + nums[0], nums[1..], isPart2)
-               || (isPart2 && Check(lhs, Concat(rhs,nums[0]), nums[1..], isPart2))
+               || (isPart2 && Check(lhs, Concat(rhs, nums[0]), nums[1..], isPart2))
         };
     }
 

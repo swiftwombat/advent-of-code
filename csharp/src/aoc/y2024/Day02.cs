@@ -1,4 +1,5 @@
-﻿
+﻿namespace aoc.y2024;
+
 /**
  * @author Zachary Cockshutt
  * @since  2024-12-02
@@ -36,7 +37,7 @@ public class Day02 : Day
     {
         for (int i = 1; i < levels.Length; i++)
         {
-            int diff = Math.Abs(levels[i] - levels[i-1]);
+            int diff = Math.Abs(levels[i] - levels[i - 1]);
             if (diff < 1 || diff > 3) { return false; }
         }
         return IsOrdered(levels);

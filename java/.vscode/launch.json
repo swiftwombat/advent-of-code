@@ -1,22 +1,22 @@
 {
-    "version": "0.1.0",
-    "configurations": [
-        {
-            "type": "java",
-            "name": "2023",
-            "request": "launch",
-            "mainClass": "com.swiftwombat.aoc.Main",
-            "args": [
-                2023,
-                "${input:dayArg}"
-            ]
-        }
-    ],
-    "inputs": [
-        {
-            "id": "dayArg",
-            "type": "promptString",
-            "description": "Enter day number (e.g. '3' will run 'Day03.java')"
-        }
-    ]
+  "version": "0.1.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "2023",
+      "request": "launch",
+      "mainClass": "com.swiftwombat.aoc.Main",
+      "args": [
+        "2023",
+        "${input:dayArg}"
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "dayArg",
+      "type": "promptString",
+      "description": "Enter day number (e.g. '3' will run 'Day03.java')"
+    }
+  ]
 }

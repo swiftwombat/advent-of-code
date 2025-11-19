@@ -1,4 +1,6 @@
 {
     "dotnet.defaultSolution": "csharp.sln",
-    "editor.inlayHints.enabled": "off"
+    "editor.inlayHints.enabled": "off",
+    "explorer.compactFolders": true,
+    "editor.formatOnSave": true
 }
