@@ -1,16 +1,46 @@
-# Java Solutions
-These are a collection of AoC solutions (by year) that were solved using Java.
+# 🎄Advent of Code: Java Solutions🎄
+These are a collection of AoC solutions (by year) that were solved using Java! I have linked my solutions to these challenges via the calenders below along with the stars I have gathered (two per puzzle, for a yearly total of 50).
 
-## Advent of Code 2023
-This is my first year of doing Advent of Code! The brief and input file for each day's puzzle can be found on the [AoC 2023 webpage](https://adventofcode.com/2023). I have linked my solutions to these challenges via the calender below along with the stars I have gathered (two per puzzle, for a yearly total of 50).
-
-This year will be coded in Java 19.
-
-### Calender
-|     |     |     |     |     |
-| :-: | :-: | :-: | :-: | :-: |
- [1](src/com/swiftwombat/aoc/y2023/Day01.java)<br>⭐/⭐ |  [2](src/com/swiftwombat/aoc/y2023/Day02.java)<br>⭐/⭐ |  [3](src/com/swiftwombat/aoc/y2023/Day03.java)<br>⭐/⭐ |  [4](src/com/swiftwombat/aoc/y2023/Day04.java)<br>⭐/⭐ |  [5](src/com/swiftwombat/aoc/y2023/Day05.java)<br>⭐/⭐
- [6](src/com/swiftwombat/aoc/y2023/Day06.java)<br>⭐/⭐ |  [7](src/com/swiftwombat/aoc/y2023/Day07.java)<br>⭐/⭐ |  [8](src/com/swiftwombat/aoc/y2023/Day08.java)<br>⭐/⭐ |  [9](src/com/swiftwombat/aoc/y2023/Day09.java)<br>⭐/⭐ | [10](src/com/swiftwombat/aoc/y2023/Day10.java)<br>⭐/⭐
-[11](src/com/swiftwombat/aoc/y2023/Day11.java)<br>⭐/⭐ | [12](src/com/swiftwombat/aoc/y2023/Day12.java)<br>⭐/⭐ | [13](src/com/swiftwombat/aoc/y2023/Day13.java)<br>⭐/⭐ | [14](src/com/swiftwombat/aoc/y2023/Day14.java)<br>⭐/⭐ | [15](src/com/swiftwombat/aoc/y2023/Day15.java)<br>⭐/⭐
-[16](src/com/swiftwombat/aoc/y2023/Day16.java)<br>⬚&nbsp;/&nbsp;⬚ | 17<br>⬚&nbsp;/&nbsp;⬚ | 18<br>⬚&nbsp;/&nbsp;⬚  | 19<br>⬚&nbsp;/&nbsp;⬚  | 20<br>⬚&nbsp;/&nbsp;⬚
-21<br>⬚&nbsp;/&nbsp;⬚ | 22<br>⬚&nbsp;/&nbsp;⬚ | 23<br>⬚&nbsp;/&nbsp;⬚ | 24<br>⬚&nbsp;/&nbsp;⬚ | 25<br>⬚&nbsp;/&nbsp;⬚
+---
+<table>
+    <thead>
+        <tr><th colspan=5><a href="https://adventofcode.com/2023" target="_blank">2023</a></th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day01.java">01</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day02.java">02</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day03.java">03</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day04.java">04</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day05.java">05</a><br>⭐/⭐</td>
+        </tr>
+        <tr>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day06.java">06</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day07.java">07</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day08.java">08</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day09.java">09</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day10.java">10</a><br>⭐/⭐</td>
+        </tr>
+        <tr>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day11.java">11</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day12.java">12</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day13.java">13</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day14.java">14</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day15.java">15</a><br>⭐/⭐</td>
+        </tr>
+        <tr>
+            <td align="center"><a href="src/com/swiftwombat/aoc/y2023/Day16.java">16</a><br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">17<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">18<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">19<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">20<br>⬚&nbsp;/&nbsp;⬚</td>
+        </tr>
+        <tr>
+            <td align="center">21<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">22<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">23<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">24<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">25<br>⬚&nbsp;/&nbsp;⬚</td>
+        </tr>
+    </tbody>
+</table>
