@@ -1,16 +1,46 @@
-# C# Solutions
-These are a collection of AoC solutions (by year) that were solved using C#.
+# 🎄Advent of Code: C# Solutions🎄
+These are a collection of AoC solutions (by year) that were solved using C#! I have linked my solutions to these challenges via the calenders below along with the stars I have gathered (two per puzzle, for a yearly total of 50).
 
-## Advent of Code 2024
-This is my second year of doing Advent of Code and first year as a post graduate! The brief and input file for each day's puzzle can be found on the [AoC 2024 webpage](https://adventofcode.com/2024). I have linked my solutions to these challenges via the calender below along with the stars I have gathered (two per puzzle, for a yearly total of 50).
-
-This year will be coded in C# (.NET 9)
-
-### Calender
-|     |     |     |     |     |
-| :-: | :-: | :-: | :-: | :-: |
-[1](src/aoc/y2024/Day01.cs)<br>⭐/⭐ |  [2](src/aoc/y2024/Day02.cs)<br>⭐/⭐ |  [3](src/aoc/y2024/Day03.cs)<br>⭐/⭐ |  [4](src/aoc/y2024/Day04.cs)<br>⭐/⭐ |  [5](src/aoc/y2024/Day05.cs)<br>⭐/⭐
-[6](src/aoc/y2024/Day06.cs)<br>⭐/⭐ |  [7](src/aoc/y2024/Day07.cs)<br>⭐/⭐ |  [8](src/aoc/y2024/Day08.cs)<br>⭐/⭐ |  9<br>⬚&nbsp;/&nbsp;⬚ | 10<br>⬚&nbsp;/&nbsp;⬚
-11<br>⬚&nbsp;/&nbsp;⬚ | 12<br>⬚&nbsp;/&nbsp;⬚ | 13<br>⬚&nbsp;/&nbsp;⬚ | 14<br>⬚&nbsp;/&nbsp;⬚ | 15<br>⬚&nbsp;/&nbsp;⬚
-16<br>⬚&nbsp;/&nbsp;⬚ | 17<br>⬚&nbsp;/&nbsp;⬚ | 18<br>⬚&nbsp;/&nbsp;⬚ | 19<br>⬚&nbsp;/&nbsp;⬚ | 20<br>⬚&nbsp;/&nbsp;⬚
-21<br>⬚&nbsp;/&nbsp;⬚ | 22<br>⬚&nbsp;/&nbsp;⬚ | 23<br>⬚&nbsp;/&nbsp;⬚ | 24<br>⬚&nbsp;/&nbsp;⬚ | 25<br>⬚&nbsp;/&nbsp;⬚
+---
+<table>
+    <thead>
+        <tr><th colspan=5><a href="https://adventofcode.com/2024" target="_blank">2024</a></th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center"><a href="src/aoc/y2024/Day01.cs">1</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/aoc/y2024/Day02.cs">2</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/aoc/y2024/Day03.cs">3</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/aoc/y2024/Day04.cs">4</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/aoc/y2024/Day05.cs">5</a><br>⭐/⭐</td>
+        </tr>
+        <tr>
+            <td align="center"><a href="src/aoc/y2024/Day06.cs">6</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/aoc/y2024/Day07.cs">7</a><br>⭐/⭐</td>
+            <td align="center"><a href="src/aoc/y2024/Day08.cs">8</a><br>⭐/⭐</td>
+            <td align="center">9<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">10<br>⬚&nbsp;/&nbsp;⬚</td>
+        </tr>
+        <tr>
+            <td align="center">11<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">12<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">13<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">14<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">15<br>⬚&nbsp;/&nbsp;⬚</td>
+        </tr>
+        <tr>
+            <td align="center">16<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">17<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">18<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">19<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">20<br>⬚&nbsp;/&nbsp;⬚</td>
+        </tr>
+        <tr>
+            <td align="center">21<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">22<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">23<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">24<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">25<br>⬚&nbsp;/&nbsp;⬚</td>
+        </tr>
+    </tbody>
+</table>
