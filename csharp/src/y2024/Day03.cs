@@ -3,6 +3,9 @@
 using System.Text.RegularExpressions;
 
 /**
+ * Day 3: Mull It Over
+ *
+ * @see https://adventofcode.com/2024/day/3
  * @author Zachary Cockshutt
  * @since  2024-12-03
  */

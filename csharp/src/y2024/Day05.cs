@@ -1,6 +1,9 @@
 ﻿namespace aoc.y2024;
 
 /**
+ * Day 5: Print Queue
+ *
+ * @see https://adventofcode.com/2024/day/5
  * @author Zachary Cockshutt
  * @since  2024-12-05
  */

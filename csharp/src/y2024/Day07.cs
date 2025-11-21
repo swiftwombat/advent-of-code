@@ -1,6 +1,9 @@
 ﻿namespace aoc.y2024;
 
 /**
+ * Day 7: Bridge Repair
+ *
+ * @see https://adventofcode.com/2024/day/7
  * @author Zachary Cockshutt
  * @since  2024-12-07
  */

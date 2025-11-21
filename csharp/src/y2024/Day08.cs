@@ -1,6 +1,9 @@
 ﻿namespace aoc.y2024;
 
 /**
+ * Day 8: Resonant Collinearity
+ *
+ * @see https://adventofcode.com/2024/day/8
  * @author Zachary Cockshutt
  * @since  2024-12-07
  */

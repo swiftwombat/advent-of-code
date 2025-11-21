@@ -1,6 +1,9 @@
 ﻿namespace aoc.y2024;
 
 /**
+ * Day 1: Historian Hysteria
+ *
+ * @see https://adventofcode.com/2024/day/1
  * @author Zachary Cockshutt
  * @since  2024-12-01
  */

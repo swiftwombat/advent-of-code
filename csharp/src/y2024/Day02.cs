@@ -1,6 +1,9 @@
 ﻿namespace aoc.y2024;
 
 /**
+ * Day 2: Red-Nosed Reports
+ *
+ * @see https://adventofcode.com/2024/day/2
  * @author Zachary Cockshutt
  * @since  2024-12-02
  */

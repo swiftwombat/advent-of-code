@@ -1,6 +1,9 @@
 ﻿namespace aoc.y2024;
 
 /**
+ * Day 6: Guard Gallivant
+ *
+ * @see https://adventofcode.com/2024/day/6
  * @author Zachary Cockshutt
  * @since  2024-12-06
  */
