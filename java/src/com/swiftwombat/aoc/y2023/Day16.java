@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 16: The Floor Will Be Lava
+ * 
+ * @see https://adventofcode.com/2023/day/16
  * @author Zachary Cockshutt
  * @since 2023-12-14
  */

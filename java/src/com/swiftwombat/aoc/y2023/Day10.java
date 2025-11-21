@@ -8,6 +8,9 @@ import java.util.Map;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 10: Pipe Maze
+ * 
+ * @see https://adventofcode.com/2023/day/10
  * @author Zachary Cockshutt
  * @since 2023-12-11
  */

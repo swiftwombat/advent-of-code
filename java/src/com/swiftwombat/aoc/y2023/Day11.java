@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 11: Cosmic Expansion
+ * 
+ * @see https://adventofcode.com/2023/day/11
  * @author Zachary Cockshutt
  * @since 2023-12-13
  */

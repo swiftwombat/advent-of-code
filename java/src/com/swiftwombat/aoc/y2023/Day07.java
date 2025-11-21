@@ -10,6 +10,9 @@ import java.util.HashMap;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 7: Camel Cards
+ * 
+ * @see https://adventofcode.com/2023/day/7
  * @author Zachary Cockshutt
  * @since 2023-12-08
  */

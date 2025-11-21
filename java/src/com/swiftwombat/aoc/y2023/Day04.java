@@ -9,6 +9,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 4: Scratchcards
+ * 
+ * @see https://adventofcode.com/2023/day/4
  * @author Zachary Cockshutt
  * @since 2023-12-04
  */

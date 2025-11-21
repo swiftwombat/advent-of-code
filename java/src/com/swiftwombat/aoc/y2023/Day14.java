@@ -8,6 +8,9 @@ import java.util.stream.IntStream;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 14: Parabolic Reflector Dish
+ * 
+ * @see https://adventofcode.com/2023/day/14
  * @author Zachary Cockshutt
  * @since 2023-12-14
  */

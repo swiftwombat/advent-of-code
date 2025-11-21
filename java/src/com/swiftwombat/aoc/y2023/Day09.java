@@ -9,6 +9,9 @@ import java.util.stream.Stream;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 9: Mirage Maintenance
+ * 
+ * @see https://adventofcode.com/2023/day/9
  * @author Zachary Cockshutt
  * @since 2023-12-09
  */

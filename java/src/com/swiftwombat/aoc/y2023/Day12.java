@@ -8,6 +8,9 @@ import java.util.stream.Stream;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 12: Hot Springs
+ * 
+ * @see https://adventofcode.com/2023/day/12
  * @author Zachary Cockshutt
  * @since 2023-12-13
  */

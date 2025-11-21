@@ -9,6 +9,9 @@ import java.util.regex.Pattern;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 2: Cube Conundrum
+ * 
+ * @see https://adventofcode.com/2023/day/2
  * @author Zachary Cockshutt
  * @since 2023-12-04
  */

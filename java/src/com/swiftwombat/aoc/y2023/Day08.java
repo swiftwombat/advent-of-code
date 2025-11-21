@@ -6,6 +6,9 @@ import java.util.HashMap;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 8: Haunted Wasteland
+ * 
+ * @see https://adventofcode.com/2023/day/8
  * @author Zachary Cockshutt
  * @since 2023-12-09
  */

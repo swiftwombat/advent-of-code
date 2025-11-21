@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 13: Point of Incidence
+ * 
+ * @see https://adventofcode.com/2023/day/13
  * @author Zachary Cockshutt
  * @since 2023-12-14
  */

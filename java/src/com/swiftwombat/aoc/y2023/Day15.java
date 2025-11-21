@@ -5,6 +5,9 @@ import java.util.LinkedHashMap;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 15: Lens Library
+ * 
+ * @see https://adventofcode.com/2023/day/15
  * @author Zachary Cockshutt
  * @since 2023-12-14
  */

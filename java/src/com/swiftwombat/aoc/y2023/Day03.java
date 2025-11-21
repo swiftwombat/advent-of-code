@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 3: Gear Ratios
+ * 
+ * @see https://adventofcode.com/2023/day/3
  * @author Zachary Cockshutt
  * @since 2023-12-04
  */

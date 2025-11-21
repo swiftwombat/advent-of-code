@@ -8,6 +8,9 @@ import java.util.regex.Pattern;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 1: Trebuchet?!
+ * 
+ * @see https://adventofcode.com/2023/day/1
  * @author Zachary Cockshutt
  * @since 2023-12-03
  */

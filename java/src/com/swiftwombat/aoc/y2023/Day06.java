@@ -10,6 +10,9 @@ import java.io.IOException;
 import com.swiftwombat.aoc.Day;
 
 /**
+ * Day 6: Wait For It
+ * 
+ * @see https://adventofcode.com/2023/day/6
  * @author Zachary Cockshutt
  * @since 2023-12-06
  */
