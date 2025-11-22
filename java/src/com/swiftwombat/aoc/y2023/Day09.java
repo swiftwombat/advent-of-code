@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -29,8 +30,8 @@ public class Day09 extends Day {
 
     private String sumFutureReadings(boolean isPartTwo) throws IOException {
         var sum = new AtomicLong(0L);
-        this.input(s -> {
-            var sqnc = parseSequence(s, isPartTwo);
+        this.forEachInputLine(line -> {
+            long[] sqnc = parseSequence(line, isPartTwo);
             sum.set(sum.get() + extrapolate(sqnc));
         });
         return sum.toString();

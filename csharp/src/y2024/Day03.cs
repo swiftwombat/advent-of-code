@@ -14,7 +14,7 @@ public class Day03 : Day
     public override string PartOne()
     {
         long total = 0L;
-        string memory = string.Join("", this.Input());
+        string memory = string.Join("", GetInputLines());
         string pattern = @"mul\((?<a>\d+),(?<b>\d+)\)";
         var matches = Regex.Matches(memory, pattern);
         foreach (Match m in matches) { total += Multiply(m); }
@@ -25,7 +25,7 @@ public class Day03 : Day
     {
         long total = 0L;
         bool enabled = true;
-        string memory = string.Join("", this.Input());
+        string memory = string.Join("", GetInputLines());
         string pattern = @"mul\((?<a>\d+),(?<b>\d+)\)|do\(\)|don't\(\)";
         var matches = Regex.Matches(memory, pattern);
         foreach (Match m in matches)

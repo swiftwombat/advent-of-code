@@ -35,16 +35,17 @@ public abstract class Day
         return rs;
     }
 
-    protected string[] Input()
+    protected string[] GetInputLines()
     {
         var lines = File.ReadAllLines(fileName);
         return lines;
     }
 
-    protected void Input(Action<string> action)
+    protected void ForEachInputLine(Action<string> callback)
     {
-        var lines = File.ReadAllLines(fileName);
-        foreach (var line in lines) { action(line); }
+        string? line = null;
+        using var reader = new StreamReader(fileName);
+        while ((line = reader.ReadLine()) != null) { callback(line); }
     }
 }
 

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -22,34 +23,34 @@ public class Day07 extends Day {
 
     @Override
     public String partOne() throws IOException {
-        var hands = parseHands(false);
+        Hand[] hands = parseHands(false);
         int winnings = getTotalWinnings(hands, RANKS);
         return String.valueOf(winnings);
     }
 
     @Override
     public String partTwo() throws IOException {
-        var hands = parseHands(true);
+        Hand[] hands = parseHands(true);
         int winnings = getTotalWinnings(hands, RANKS_JOKER);
         return String.valueOf(winnings);
     }
 
     private Hand[] parseHands(boolean isPartTwo) throws IOException {
         var hands = new ArrayList<Hand>();
-        this.input((s) -> {
-            var input = s.split(" ");
-            var cards = isPartTwo ? input[0].replace('J', getBestCard(input[0])) : input[0];
-            var type = parseHandType(cards);
+        this.forEachInputLine(line -> {
+            String[] input = line.split(" ");
+            String cards = isPartTwo ? input[0].replace('J', getBestCard(input[0])) : input[0];
+            int type = parseHandType(cards);
             hands.add(new Hand(input[0].toCharArray(), parseInt(input[1]), type));
         });
         return hands.toArray(Hand[]::new);
     }
 
     private int parseHandType(String cards) {
-        var max = 0;
+        int max = 0;
         var map = new HashMap<Character, Integer>();
         for (var c : cards.toCharArray()) {
-            var i = map.containsKey(c) ? map.get(c) + 1 : 1;
+            int i = map.containsKey(c) ? map.get(c) + 1 : 1;
             if (i > max) { max = i; }
             ;
             map.put(c, i);
@@ -60,7 +61,7 @@ public class Day07 extends Day {
     private char getBestCard(String cards) {
         int max = 0;
         char maxChar = '\0';
-        var ranks = RANKS_JOKER.substring(0, RANKS_JOKER.length() - 1).toCharArray();
+        char[] ranks = RANKS_JOKER.substring(0, RANKS_JOKER.length() - 1).toCharArray();
         for (var r : ranks) {
             int diff = cards.length() - cards.replace("" + r, "").length();
             if (diff <= max) { continue; }
@@ -89,8 +90,8 @@ public class Day07 extends Day {
             if (a.type < b.type) { return 1; }
             if (a.type > b.type) { return -1; }
             for (int i = 0; i < 5; i++) {
-                var c = ranks.indexOf(a.cards[i]);
-                var o = ranks.indexOf(b.cards[i]);
+                int c = ranks.indexOf(a.cards[i]);
+                int o = ranks.indexOf(b.cards[i]);
                 if (c == o) { continue; }
                 return c < o ? 1 : -1;
             }

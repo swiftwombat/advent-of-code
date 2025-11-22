@@ -11,7 +11,7 @@ public class Day08 : Day
 {
     public override string PartOne()
     {
-        var map = this.Input().ToCharMatrix();
+        char[][] map = GetInputLines().ToCharMatrix();
         var positions = FindPositions(map);
         var antinodes = new HashSet<(int, int)>();
         foreach (var set in positions)
@@ -27,7 +27,7 @@ public class Day08 : Day
 
     public override string PartTwo()
     {
-        var map = this.Input().ToCharMatrix();
+        char[][] map = GetInputLines().ToCharMatrix();
         var positions = FindPositions(map);
         var antinodes = new HashSet<(int, int)>();
         foreach (var set in positions)
@@ -63,8 +63,7 @@ public class Day08 : Day
         return positions;
     }
 
-    private static bool IsBounded(
-        (int x, int y) pos, int n)
+    private static bool IsBounded((int x, int y) pos, int n)
     {
         return pos.x >= 0 && pos.x < n
             && pos.y >= 0 && pos.y < n;

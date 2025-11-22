@@ -9,4 +9,7 @@
     "java.format.settings.url": ".vscode/java-formatter.xml",
     "editor.inlayHints.enabled": "off",
     "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always",
+    },
 }

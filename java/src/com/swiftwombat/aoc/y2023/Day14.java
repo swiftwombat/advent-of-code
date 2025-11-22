@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -21,28 +22,28 @@ public class Day14 extends Day {
 
     @Override
     public String partOne() throws IOException {
-        var platform = this.parsePlatform();
+        Platform platform = this.parsePlatform();
         platform.tilt(N);
-        var load = platform.getLoad();
+        int load = platform.getLoad();
         return String.valueOf(load);
     }
 
     @Override
     public String partTwo() throws IOException {
-        var platform = this.parsePlatform();
+        Platform platform = this.parsePlatform();
         for (int i = 0; i < 1000; i++) {
             platform.tilt(N);
             platform.tilt(W);
             platform.tilt(S);
             platform.tilt(E);
         }
-        var load = platform.getLoad();
+        int load = platform.getLoad();
         return String.valueOf(load);
     }
 
     private Platform parsePlatform() throws IOException {
         var matrix = new ArrayList<char[]>();
-        this.input((s) -> matrix.add(s.toCharArray()));
+        this.forEachInputLine(line -> matrix.add(line.toCharArray()));
         return new Platform(matrix.toArray(new char[matrix.size()][]));
     }
 

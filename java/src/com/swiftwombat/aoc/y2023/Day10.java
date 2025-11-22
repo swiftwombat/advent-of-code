@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -19,8 +20,8 @@ public class Day10 extends Day {
     private static final Direction N = Direction.N, S = Direction.S,
             E = Direction.E, W = Direction.W;
 
+    // @formatter:off
     private static Map<Character, Pipe> pipes = new HashMap<>() {
-
         {
             put('|', new Pipe(N, S));
             put('-', new Pipe(E, W));
@@ -30,13 +31,14 @@ public class Day10 extends Day {
             put('7', new Pipe(S, W));
         }
     };
+    // @formatter:on
 
     @Override
     public String partOne() throws IOException {
         var path = new ArrayList<Tile>();
-        var matrix = getTileMatrix();
-        var curr = getStartingTile(matrix);
-        var dir = N;
+        Tile[][] matrix = getTileMatrix();
+        Tile curr = getStartingTile(matrix);
+        Direction dir = N;
         while (true) {
             curr = dir.travel(curr, matrix);
             path.add(curr);
@@ -49,33 +51,33 @@ public class Day10 extends Day {
     @Override
     public String partTwo() throws IOException {
         var path = new ArrayList<Tile>();
-        var matrix = getTileMatrix();
-        var curr = getStartingTile(matrix);
-        var dir = N;
+        Tile[][] matrix = getTileMatrix();
+        Tile curr = getStartingTile(matrix);
+        Direction dir = N;
         while (true) {
             curr = dir.travel(curr, matrix);
             if (curr.ch != '|' && curr.ch != '-') { path.add(curr); }
             if (curr.isStart()) { break; }
             dir = pipes.get(curr.ch).getExitDirection(dir);
         }
-        var count = 0;
+        int count = 0;
         var tiles = new ArrayList<Tile>();
         for (int i = 0; i < matrix.length; i++)
             for (int j = 0; j < matrix[0].length; j++) {
-                var tile = matrix[i][j];
+                Tile tile = matrix[i][j];
                 if (!tile.isVisited && !tile.isStart()) { tiles.add(tile); }
             }
-        for (var t : tiles) {
-            if (t.isInside(path)) { count++; }
+        for (Tile tile : tiles) {
+            if (tile.isInside(path)) { count++; }
         }
         return String.valueOf(count);
     }
 
     private Tile[][] getTileMatrix() throws IOException {
-        var input = this.input();
+        String[] input = this.getInputLines();
         var matrix = new Tile[input.length][input[0].length()];
         for (int i = 0; i < input.length; i++) {
-            var row = input[i].toCharArray();
+            char[] row = input[i].toCharArray();
             for (int j = 0; j < row.length; j++) {
                 matrix[i][j] = new Tile(row[j], j, i, false);
             }
@@ -137,8 +139,8 @@ public class Day10 extends Day {
         }
 
         private Tile travel(Tile curr, Tile[][] matrix) {
-            var i = curr.y + this.y;
-            var j = curr.x + this.x;
+            int i = curr.y + this.y;
+            int j = curr.x + this.x;
             return matrix[i][j] = new Tile(matrix[i][j].ch, j, i, true);
         }
     }

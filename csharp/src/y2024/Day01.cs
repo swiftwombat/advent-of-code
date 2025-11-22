@@ -13,9 +13,9 @@ public class Day01 : Day
     {
         List<int> left = [];
         List<int> right = [];
-        this.Input(s =>
+        ForEachInputLine(line =>
         {
-            var (l, r) = ParseIds(s);
+            var (l, r) = ParseIds(line);
             left.Add(l);
             right.Add(r);
         });
@@ -29,13 +29,12 @@ public class Day01 : Day
     {
         List<int> left = [];
         Dictionary<int, int> right = [];
-        this.Input(s =>
+        ForEachInputLine(line =>
         {
-            var (l, r) = ParseIds(s);
+            var (l, r) = ParseIds(line);
             left.Add(l);
             int occurances = right.GetValueOrDefault(r) + 1;
             if (!right.TryAdd(r, occurances)) { right[r] = occurances; }
-            ;
         });
         return left.Sum(l => l * right.GetValueOrDefault(l)).ToString();
     }

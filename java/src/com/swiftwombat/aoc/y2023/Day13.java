@@ -4,6 +4,7 @@ import static java.lang.Math.min;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -18,8 +19,8 @@ public class Day13 extends Day {
     @Override
     public String partOne() throws IOException {
         int sum = 0;
-        var tensor = this.parseCharTensor();
-        for (var matrix : tensor) {
+        char[][][] tensor = this.parseCharTensor();
+        for (char[][] matrix : tensor) {
             sum += getSummary(matrix);
         }
         return String.valueOf(sum);
@@ -28,8 +29,8 @@ public class Day13 extends Day {
     @Override
     public String partTwo() throws IOException {
         int sum = 0;
-        var tensor = this.parseCharTensor();
-        for (var matrix : tensor) {
+        char[][][] tensor = this.parseCharTensor();
+        for (char[][] matrix : tensor) {
             sum += getSummary(matrix);
         }
         return String.valueOf(sum);
@@ -38,9 +39,9 @@ public class Day13 extends Day {
     private char[][][] parseCharTensor() throws IOException {
         var tensor = new ArrayList<char[][]>();
         var matrix = new ArrayList<char[]>();
-        this.input((s) -> {
-            if (!s.isEmpty()) {
-                matrix.add(s.toCharArray());
+        this.forEachInputLine(line -> {
+            if (!line.isEmpty()) {
+                matrix.add(line.toCharArray());
                 return;
             }
             tensor.add(matrix.toArray(new char[matrix.size()][]));
@@ -63,8 +64,8 @@ public class Day13 extends Day {
     private int getReflection(char[][] matrix) {
         for (int i = 1; i < matrix.length; i++) {
             // var isReflected = true;
-            var mismatches = 0;
-            var n = i + min(i, matrix.length - i);
+            int mismatches = 0;
+            int n = i + min(i, matrix.length - i);
             for (int j = i - 1, k = i; j >= 0 && k < n; j--, k++) {
                 // isReflected = Arrays.equals(matrix[j], matrix[k]);
                 mismatches += mismatches(matrix[j], matrix[k]);
@@ -88,7 +89,7 @@ public class Day13 extends Day {
     }
 
     private int mismatches(char[] a, char[] b) {
-        var count = 0;
+        int count = 0;
         for (int i = 0; i < a.length; i++) {
             if (a[i] != b[i]) { count++; }
         }

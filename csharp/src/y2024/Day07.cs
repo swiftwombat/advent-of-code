@@ -12,9 +12,9 @@ public class Day07 : Day
     public override string PartOne()
     {
         long sum = 0L;
-        this.Input(s =>
+        ForEachInputLine(line =>
         {
-            (long lhs, long[] nums) = Parse(s);
+            (long lhs, long[] nums) = Parse(line);
             if (Check(lhs, nums[0], nums[1..])) { sum += lhs; }
         });
         return sum.ToString();
@@ -23,9 +23,9 @@ public class Day07 : Day
     public override string PartTwo()
     {
         long sum = 0L;
-        this.Input(s =>
+        ForEachInputLine(line =>
         {
-            (long lhs, long[] nums) = Parse(s);
+            (long lhs, long[] nums) = Parse(line);
             if (Check(lhs, nums[0], nums[1..], true)) { sum += lhs; }
         });
         return sum.ToString();
@@ -35,7 +35,7 @@ public class Day07 : Day
     {
         var arr = line.Split(": ");
         long lhs = long.Parse(arr[0]);
-        long[] nums = arr[1].Split(" ").Select(long.Parse).ToArray();
+        long[] nums = [.. arr[1].Split(" ").Select(long.Parse)];
         return (lhs, nums);
     }
 

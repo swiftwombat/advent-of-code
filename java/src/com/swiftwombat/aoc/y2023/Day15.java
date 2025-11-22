@@ -2,6 +2,7 @@ package com.swiftwombat.aoc.y2023;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -16,8 +17,8 @@ public class Day15 extends Day {
     @Override
     public String partOne() throws IOException {
         int sum = 0;
-        var input = this.input()[0];
-        for (var s : input.split(",")) {
+        String input = this.getInputLines()[0];
+        for (String s : input.split(",")) {
             sum += getHash(s);
         }
         return String.valueOf(sum);
@@ -25,11 +26,11 @@ public class Day15 extends Day {
 
     @Override
     public String partTwo() throws IOException {
-        var sum = 0;
-        var input = this.input()[0];
+        int sum = 0;
+        String input = this.getInputLines()[0];
         var boxes = new LinkedHashMap<Integer, LinkedHashMap<String, Integer>>();
-        for (var s : input.split(",")) {
-            var lens = s.split("-|=");
+        for (String s : input.split(",")) {
+            String[] lens = s.split("-|=");
             int box = getHash(lens[0]);
             if (!boxes.containsKey(box)) { boxes.put(box, new LinkedHashMap<>()); }
             if (s.charAt(s.length() - 1) == '-') {
@@ -38,9 +39,9 @@ public class Day15 extends Day {
             }
             boxes.get(box).put(lens[0], Integer.parseInt(lens[1]));
         }
-        for (var box : boxes.keySet()) {
+        for (int box : boxes.keySet()) {
             var slot = 1;
-            for (var lens : boxes.get(box).values())
+            for (int lens : boxes.get(box).values())
                 sum += (1 + box) * slot++ * lens;
         }
         return String.valueOf(sum);
@@ -48,8 +49,8 @@ public class Day15 extends Day {
 
     private int getHash(String s) {
         int hash = 0;
-        var arr = s.toCharArray();
-        for (var ch : arr) {
+        char[] arr = s.toCharArray();
+        for (char ch : arr) {
             hash = ((hash + ch) * 17) % 256;
         }
         return hash;

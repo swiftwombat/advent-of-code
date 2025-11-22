@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -19,22 +20,22 @@ public class Day05 extends Day {
 
     @Override
     public String partOne() throws IOException {
-        var almanac = this.parseAlmanac(false);
-        var location = almanac.getMinLocation();
+        Almanac almanac = this.parseAlmanac(false);
+        long location = almanac.getMinLocation();
         return String.valueOf(location);
     }
 
     @Override
     public String partTwo() throws IOException {
-        var almanac = this.parseAlmanac(true);
-        var location = almanac.getMinLocation();
+        Almanac almanac = this.parseAlmanac(true);
+        long location = almanac.getMinLocation();
         return String.valueOf(location);
     }
 
     private Almanac parseAlmanac(boolean isPartTwo) throws IOException {
-        var input = this.input();
-        var n = input.length;
-        var seeds = isPartTwo ? parseSeedsAsRanges(input[0]) : parseSeeds(input[0]);
+        String[] input = this.getInputLines();
+        int n = input.length;
+        Seed[] seeds = isPartTwo ? parseSeedsAsRanges(input[0]) : parseSeeds(input[0]);
         var categories = new ArrayList<AlmanacMap[]>();
         for (int i = 2; i < n; i++) {
             if (isAlpha(input[i].charAt(0))) { continue; }

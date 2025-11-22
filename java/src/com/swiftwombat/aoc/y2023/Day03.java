@@ -2,6 +2,7 @@ package com.swiftwombat.aoc.y2023;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -25,7 +26,7 @@ public class Day03 extends Day {
 
     private String sumPartNumbers(boolean isPartTwo) throws IOException {
         int sum = 0;
-        var matrix = parseCharMatrix();
+        char[][] matrix = parseCharMatrix();
         for (int i = 0; i < matrix.length; i++)
             for (int j = 0; j < matrix[0].length; j++)
                 if (isSymbol(matrix[i][j])) { sum += getAdj(matrix, i, j, isPartTwo); }
@@ -34,7 +35,7 @@ public class Day03 extends Day {
 
     private char[][] parseCharMatrix() throws IOException {
         var matrix = new ArrayList<char[]>();
-        this.input((s) -> matrix.add(s.toCharArray()));
+        this.forEachInputLine(line -> matrix.add(line.toCharArray()));
         return matrix.toArray(new char[matrix.size()][]);
     }
 
@@ -43,7 +44,7 @@ public class Day03 extends Day {
         for (int dx = (i > 0 ? -1 : 0); dx <= (i < n ? 1 : 0); ++dx)
             for (int dy = (j > 0 ? -1 : 0); dy <= (j < m ? 1 : 0); ++dy)
                 if (isDigit(matrix[i + dx][j + dy])) {
-                    var digit = sprawlDigit(matrix[i + dx], j + dy);
+                    int digit = sprawlDigit(matrix[i + dx], j + dy);
                     sum += digit;
                     ratio *= digit;
                     count++;

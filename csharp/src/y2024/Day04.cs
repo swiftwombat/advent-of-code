@@ -13,7 +13,7 @@ public class Day04 : Day
     {
         long count = 0L;
         string match = "XMAS";
-        var matrix = this.Input();
+        var matrix = GetInputLines();
         int n = matrix.Length;
         int len = match.Length;
         for (int x = 0; x < n; x++)
@@ -31,7 +31,7 @@ public class Day04 : Day
     {
         long count = 0L;
         string match = "MAS";
-        var matrix = this.Input();
+        var matrix = GetInputLines();
         int len = match.Length;
         int buf = len - 1;
         int n = matrix.Length - buf;

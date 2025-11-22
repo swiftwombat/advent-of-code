@@ -2,6 +2,8 @@ package com.swiftwombat.aoc.y2023;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -19,23 +21,22 @@ public class Day16 extends Day {
     @Override
     public String partOne() throws IOException {
         var beam = new Beam(0, 0, Direction.E);
-        var grid = this.parseGrid();
+        Grid grid = this.parseGrid();
         int energised = grid.trace(beam);
-        System.out.println(grid.toString());
         return String.valueOf(energised);
     }
 
     @Override
     public String partTwo() throws IOException {
-        var sum = 0;
+        int sum = 0;
         return String.valueOf(sum);
     }
 
     private Grid parseGrid() throws IOException {
         var matrix = new ArrayList<Tile[]>();
-        this.input((s) -> {
-            var chars = s.toCharArray();
-            var row = new Tile[s.length()];
+        this.forEachInputLine(line -> {
+            char[] chars = line.toCharArray();
+            var row = new Tile[line.length()];
             for (int i = 0; i < chars.length; i++) {
                 row[i] = new Tile(chars[i], 0);
             }
@@ -52,7 +53,7 @@ public class Day16 extends Day {
             while (x >= 0 && x < tiles[0].length
                     && y >= 0 && y < tiles.length
                     && tiles[y][x].type == '.') {
-                var tile = tiles[y][x];
+                Tile tile = tiles[y][x];
                 if (tiles[y][x].count > 1) { return sum; }
                 if (tile.count == 0) { sum++; }
                 tiles[y][x] = new Tile(tile.type, tile.count + 1);
@@ -63,8 +64,8 @@ public class Day16 extends Day {
                     && y >= 0 && y < tiles.length) {
                 if (tiles[y][x].count == 0) { sum++; }
                 tiles[y][x] = new Tile(tiles[y][x].type, tiles[y][x].count + 1);
-                var beams = getReflections(x, y, tiles[y][x].type, beam);
-                for (var b : beams) {
+                List<Beam> beams = getReflections(x, y, tiles[y][x].type, beam);
+                for (Beam b : beams) {
                     sum += this.trace(b);
                 }
             }
@@ -83,7 +84,7 @@ public class Day16 extends Day {
                 reflections.add(new Beam(x + N.x, y + N.y, N));
                 return reflections;
             }
-            var d = beam.dir;
+            Direction d = beam.dir;
             if (type == '\\') {
                 d = Direction.reflect(d);
             } else if (type == '/') { d = Direction.rotate(d); }

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -28,18 +29,18 @@ public class Day01 extends Day {
     @Override
     public String partOne() throws IOException {
         var sum = new AtomicInteger(0);
-        this.input((s) -> sum.set(sum.get() + this.parseInt(s)));
+        this.forEachInputLine(line -> sum.set(sum.get() + this.parseInt(line)));
         return sum.toString();
     }
 
     @Override
     public String partTwo() throws IOException {
         var sum = new AtomicInteger(0);
-        var p = Pattern.compile("(?=(one|t(wo|hree)|f(our|ive)|s(ix|even)|eight|nine))");
-        this.input((s) -> {
-            var matcher = p.matcher(s);
-            s = matcher.replaceAll(m -> digitWords.get(m.group(1)));
-            sum.set(sum.get() + this.parseInt(s));
+        Pattern p = Pattern.compile("(?=(one|t(wo|hree)|f(our|ive)|s(ix|even)|eight|nine))");
+        this.forEachInputLine(line -> {
+            var matcher = p.matcher(line);
+            line = matcher.replaceAll(m -> digitWords.get(m.group(1)));
+            sum.set(sum.get() + this.parseInt(line));
         });
         return sum.toString();
     }

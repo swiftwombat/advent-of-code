@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -26,13 +27,13 @@ public class Day02 extends Day {
     @Override
     public String partOne() throws IOException {
         var sum = new AtomicInteger(0);
-        this.input((s) -> {
-            var sets = s.split(";");
-            var possible = true;
-            for (int i = 0; i < sets.length && possible; i++) {
-                possible = parseSet(sets[i]).isPossible();
+        this.forEachInputLine(line -> {
+            String[] rgbValues = line.split(";");
+            boolean possible = true;
+            for (int i = 0; i < rgbValues.length && possible; i++) {
+                possible = parseSet(rgbValues[i]).isPossible();
             }
-            var id = possible ? Integer.parseInt(s.split(":")[0].split(" ")[1]) : 0;
+            int id = possible ? Integer.parseInt(line.split(":")[0].split(" ")[1]) : 0;
             sum.set(sum.get() + id);
         });
         return sum.toString();
@@ -41,15 +42,15 @@ public class Day02 extends Day {
     @Override
     public String partTwo() throws IOException {
         var sum = new AtomicInteger(0);
-        this.input((s) -> {
+        this.forEachInputLine(line -> {
             int r = 0, g = 0, b = 0;
-            for (var str : s.split(";")) {
-                var set = parseSet(str);
-                r = max(r, set.red);
-                g = max(g, set.green);
-                b = max(b, set.blue);
+            for (var rgbValues : line.split(";")) {
+                Set rgb = parseSet(rgbValues);
+                r = max(r, rgb.red);
+                g = max(g, rgb.green);
+                b = max(b, rgb.blue);
             }
-            var power = r * b * g;
+            int power = r * b * g;
             sum.set(sum.get() + power);
         });
         return sum.toString();

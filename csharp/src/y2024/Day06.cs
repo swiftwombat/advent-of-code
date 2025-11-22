@@ -11,7 +11,7 @@ public class Day06 : Day
 {
     public override string PartOne()
     {
-        var map = this.Input().ToCharMatrix();
+        char[][] map = GetInputLines().ToCharMatrix();
         (int, int) startPos = FindStartPosition(map);
         int positionCount = Patrol(map, startPos).route.Length;
         return positionCount.ToString();
@@ -20,7 +20,7 @@ public class Day06 : Day
     public override string PartTwo()
     {
         long loopCount = 0L;
-        var map = this.Input().ToCharMatrix();
+        char[][] map = GetInputLines().ToCharMatrix();
         (int, int) startPos = FindStartPosition(map);
         (var route, _) = Patrol(map, startPos);
         foreach ((int x, int y) pos in route)

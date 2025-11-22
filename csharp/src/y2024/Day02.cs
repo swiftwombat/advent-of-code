@@ -12,9 +12,9 @@ public class Day02 : Day
     public override string PartOne()
     {
         long safeCount = 0L;
-        this.Input(s =>
+        ForEachInputLine(line =>
         {
-            int[] levels = s.Split(" ").Select(int.Parse).ToArray();
+            int[] levels = line.Split(" ").Select(int.Parse).ToArray();
             if (IsSafe(levels)) { safeCount++; }
         });
         return safeCount.ToString();
@@ -23,9 +23,9 @@ public class Day02 : Day
     public override string PartTwo()
     {
         long safeCount = 0L;
-        this.Input(s =>
+        ForEachInputLine(line =>
         {
-            int[] levels = s.Split(" ").Select(int.Parse).ToArray();
+            int[] levels = line.Split(" ").Select(int.Parse).ToArray();
             if (IsSafe(levels)) { safeCount++; return; }
             for (int i = 0; i < levels.Length; i++)
             {

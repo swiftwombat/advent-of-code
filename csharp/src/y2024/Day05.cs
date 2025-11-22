@@ -11,7 +11,7 @@ public class Day05 : Day
 {
     public override string PartOne()
     {
-        string[] input = this.Input();
+        string[] input = GetInputLines();
         string[][] pages = ParsePageLists(input);
         Comparer<string> ruleset = ParseRuleset(input);
         return pages
@@ -22,7 +22,7 @@ public class Day05 : Day
 
     public override string PartTwo()
     {
-        string[] input = this.Input();
+        string[] input = GetInputLines();
         string[][] pages = ParsePageLists(input);
         Comparer<string> ruleset = ParseRuleset(input);
         return pages

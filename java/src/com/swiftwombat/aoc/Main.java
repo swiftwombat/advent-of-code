@@ -19,8 +19,8 @@ public class Main {
 
     private static void run(String year, int dayNumber) {
         try {
-            var name = format("com.swiftwombat.aoc.y%s.Day%02d", year, dayNumber);
-            var day = (Day) Class.forName(name).getDeclaredConstructor().newInstance();
+            String name = format("com.swiftwombat.aoc.y%s.Day%02d", year, dayNumber);
+            Day day = (Day) Class.forName(name).getDeclaredConstructor().newInstance();
             day.run(year);
         } catch (Exception e) {
             err("Day not found.");

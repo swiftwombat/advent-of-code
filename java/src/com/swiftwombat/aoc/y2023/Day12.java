@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -19,9 +20,9 @@ public class Day12 extends Day {
     @Override
     public String partOne() throws IOException {
         var sum = new AtomicLong(0L);
-        this.input((s) -> {
-            var state = parseState(s);
-            var count = state.countArrangments();
+        this.forEachInputLine(line -> {
+            State state = parseState(line);
+            long count = state.countArrangments();
             sum.set(sum.get() + count);
         });
         return sum.toString();
@@ -30,27 +31,27 @@ public class Day12 extends Day {
     @Override
     public String partTwo() throws IOException {
         var sum = new AtomicLong(0L);
-        this.input((s) -> {
-            var state = parseState(s);
-            var springs = unfoldSprings(state.springs);
-            var groups = unfoldGroups(state.groups);
+        this.forEachInputLine(line -> {
+            State state = parseState(line);
+            char[] springs = unfoldSprings(state.springs);
+            int[] groups = unfoldGroups(state.groups);
             state = new State(springs, groups, 0, state.cache);
-            var count = state.countArrangments();
+            long count = state.countArrangments();
             sum.set(sum.get() + count);
         });
         return sum.toString();
     }
 
     private State parseState(String s) {
-        var input = s.split(" ");
-        var springs = (input[0] + ".").toCharArray();
-        var groups = Stream.of(input[1].split(",")).mapToInt(Integer::parseInt).toArray();
+        String[] input = s.split(" ");
+        char[] springs = (input[0] + ".").toCharArray();
+        int[] groups = Stream.of(input[1].split(",")).mapToInt(Integer::parseInt).toArray();
         return new State(springs, groups, 0, new HashMap<State, Long>());
     }
 
     private char[] unfoldSprings(char[] springs) {
-        var sub = String.valueOf(springs).substring(0, springs.length - 1);
-        var str = sub;
+        String sub = String.valueOf(springs).substring(0, springs.length - 1);
+        String str = sub;
         for (int i = 0; i < 4; i++) {
             str += "?" + sub;
         }
@@ -87,22 +88,22 @@ public class Day12 extends Day {
         }
 
         private long stepUnknown() {
-            var damaged = stepDamaged();
-            var working = stepWorking();
+            long damaged = stepDamaged();
+            long working = stepWorking();
             return damaged + working;
         }
 
         private long stepWorking() {
-            var nextSprings = Arrays.copyOfRange(springs, 1, springs.length);
+            char[] nextSprings = Arrays.copyOfRange(springs, 1, springs.length);
             if (groupCount <= 0) { return new State(nextSprings, groups, 0, cache).countArrangments(); }
             if (groups[0] != groupCount) { return 0L; }
-            var nextGroups = Arrays.copyOfRange(groups, 1, groups.length);
+            int[] nextGroups = Arrays.copyOfRange(groups, 1, groups.length);
             return new State(nextSprings, nextGroups, 0, cache).countArrangments();
         }
 
         private long stepDamaged() {
             if (groups.length == 0 || groupCount >= groups[0]) { return 0L; }
-            var nextSprings = Arrays.copyOfRange(springs, 1, springs.length);
+            char[] nextSprings = Arrays.copyOfRange(springs, 1, springs.length);
             return new State(nextSprings, groups, groupCount + 1, cache).countArrangments();
         }
 

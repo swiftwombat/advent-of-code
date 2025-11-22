@@ -4,6 +4,7 @@ import static java.lang.Math.abs;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -17,33 +18,29 @@ public class Day11 extends Day {
 
     @Override
     public String partOne() throws IOException {
-        long sum = 0;
-        var matrix = getCharMatrix();
-        var rows = getExpandedRows(matrix);
-        var cols = getExpandedCols(matrix);
-        var galaxies = getGalaxies(matrix, rows, cols, 1);
-        for (var g : galaxies) {
-            sum += g.getDistanceSum(galaxies);
-        }
-        return String.valueOf(sum / 2);
+        return String.valueOf(sumGalacticDistances(1));
     }
 
     @Override
     public String partTwo() throws IOException {
+        return String.valueOf(sumGalacticDistances(999999));
+    }
+
+    private long sumGalacticDistances(int expansionRate) throws IOException {
         long sum = 0;
-        var matrix = getCharMatrix();
-        var rows = getExpandedRows(matrix);
-        var cols = getExpandedCols(matrix);
-        var galaxies = getGalaxies(matrix, rows, cols, 999999);
-        for (var g : galaxies) {
-            sum += g.getDistanceSum(galaxies);
+        char[][] matrix = getCharMatrix();
+        int[] rows = getExpandedRows(matrix);
+        int[] cols = getExpandedCols(matrix);
+        Galaxy[] galaxies = getGalaxies(matrix, rows, cols, expansionRate);
+        for (Galaxy galaxy : galaxies) {
+            sum += galaxy.getDistanceSum(galaxies);
         }
-        return String.valueOf(sum / 2);
+        return sum / 2;
     }
 
     private char[][] getCharMatrix() throws IOException {
         var matrix = new ArrayList<char[]>();
-        this.input((s) -> matrix.add(s.toCharArray()));
+        this.forEachInputLine(line -> matrix.add(line.toCharArray()));
         return matrix.toArray(new char[matrix.size()][]);
     }
 
@@ -73,34 +70,39 @@ public class Day11 extends Day {
         return true;
     }
 
-    private Galaxy[] getGalaxies(char[][] matrix, int[] rows, int[] cols, int rate) {
+    private Galaxy[] getGalaxies(
+            char[][] matrix, int[] rows, int[] cols, int expansionRate) {
         var galaxies = new ArrayList<Galaxy>();
         for (int i = 0; i < matrix.length; i++)
             for (int j = 0; j < matrix[i].length; j++)
-                if (matrix[i][j] == '#') { galaxies.add(getGalaxy(i, j, rows, cols, rate)); }
+                if (matrix[i][j] == '#') {
+                    Galaxy galaxy = getGalaxy(i, j, rows, cols, expansionRate);
+                    galaxies.add(galaxy);
+                }
         return galaxies.toArray(new Galaxy[galaxies.size()]);
     }
 
-    private Galaxy getGalaxy(int i, int j, int[] rows, int[] cols, int rate) {
-        i = i + getOffset(rows, i, rate);
-        j = j + getOffset(cols, j, rate);
+    private Galaxy getGalaxy(
+            int i, int j, int[] rows, int[] cols, int expansionRate) {
+        i = i + getOffset(rows, i, expansionRate);
+        j = j + getOffset(cols, j, expansionRate);
         return new Galaxy(j, i);
     }
 
-    private int getOffset(int[] expandeds, int i, int rate) {
+    private int getOffset(int[] expandeds, int i, int expansionRate) {
         var offset = 0;
         for (var e : expandeds)
-            if (e < i) { offset += rate; }
+            if (e < i) { offset += expansionRate; }
         return offset;
     }
 
     private record Galaxy(int x, int y) {
 
         private long getDistanceSum(Galaxy[] galaxies) {
-            var sum = 0L;
-            for (var g : galaxies) {
-                if (this.equals(g)) { continue; }
-                sum += abs(g.x - x) + abs(g.y - y);
+            long sum = 0L;
+            for (Galaxy galaxy : galaxies) {
+                if (this.equals(galaxy)) { continue; }
+                sum += abs(galaxy.x - x) + abs(galaxy.y - y);
             }
             return sum;
         }
@@ -108,8 +110,8 @@ public class Day11 extends Day {
         @Override
         public boolean equals(Object o) {
             if (!(o instanceof Galaxy)) { return false; }
-            var g = (Galaxy) o;
-            return x == g.x && y == g.y;
+            Galaxy galaxy = (Galaxy) o;
+            return x == galaxy.x && y == galaxy.y;
         }
     }
 }

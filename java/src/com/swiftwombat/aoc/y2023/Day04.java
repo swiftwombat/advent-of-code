@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.concurrent.atomic.AtomicInteger;
+
 import com.swiftwombat.aoc.Day;
 
 /**
@@ -20,9 +21,9 @@ public class Day04 extends Day {
     @Override
     public String partOne() throws IOException {
         var sum = new AtomicInteger(0);
-        this.input((s) -> {
-            var wins = this.getWinCount(s);
-            var score = (int) (wins > 1 ? pow(2, wins - 1) : wins);
+        this.forEachInputLine((s) -> {
+            int wins = this.getWinCount(s);
+            int score = (int) (wins > 1 ? pow(2, wins - 1) : wins);
             sum.set(sum.get() + score);
         });
         return sum.toString();
@@ -30,12 +31,12 @@ public class Day04 extends Day {
 
     @Override
     public String partTwo() throws IOException {
-        var games = this.input();
-        var counts = new int[games.length];
-        var sum = 0;
+        String[] games = this.getInputLines();
+        int[] counts = new int[games.length];
+        int sum = 0;
         for (int i = 0; i < counts.length; i++) {
             counts[i]++;
-            var wins = this.getWinCount(games[i]);
+            int wins = this.getWinCount(games[i]);
             for (int j = 1; j <= wins; j++) {
                 counts[i + j] += counts[i];
             }
@@ -45,8 +46,8 @@ public class Day04 extends Day {
     }
 
     private int getWinCount(String s) {
-        var game = s.split("(: +)|( \\| +)");
-        var sets = new String[2][];
+        String[] game = s.split("(: +)|( \\| +)");
+        String[][] sets = new String[2][];
         for (var i = 1; i < game.length; i++) {
             sets[i - 1] = game[i].split(" +");
         }
