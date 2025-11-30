@@ -13,6 +13,18 @@
         "${input:dayArg}"
       ]
     },
+    {
+      "name": "2025",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/net9.0/csharp.dll",
+      "console": "integratedTerminal",
+      "args": [
+        "2025",
+        "${input:dayArg}"
+      ]
+    },
   ],
   "inputs": [
     {
