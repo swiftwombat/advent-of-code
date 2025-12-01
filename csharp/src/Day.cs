@@ -6,20 +6,16 @@
  */
 public abstract class Day
 {
-    private readonly string fileName;
-
-    public Day()
-    {
-        var day = GetType().Name.ToLower();
-        fileName = string.Format("dat/{0}.txt", day);
-    }
+    private string fileName = "";
 
     public abstract string PartOne();
 
     public abstract string PartTwo();
 
-    public void Run()
+    public void Run(string year)
     {
+        var day = GetType().Name.ToLower();
+        fileName = string.Format("dat/y{0}/{1}.txt", year, day);
         var rs = new string[] { Run(PartOne), Run(PartTwo) };
         for (int i = 0; i < 2; i++) { Console.WriteLine("P{0}: {1}", i + 1, rs[i]); }
     }

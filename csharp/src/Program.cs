@@ -16,12 +16,12 @@ class Program
         catch (Exception e) { Error(e.ToString()); }
     }
 
-    private static void Run(String year, int dayNumber)
+    private static void Run(string year, int dayNumber)
     {
         var name = string.Format("aoc.y{0}.Day{1}", year, dayNumber.ToString("D2"));
         var day = Type.GetType(name);
         if (day == null) { Error("Day not found."); }
-        else { (Activator.CreateInstance(day) as Day)?.Run(); }
+        else { (Activator.CreateInstance(day) as Day)?.Run(year); }
     }
 
     private static void Error(string msg)
