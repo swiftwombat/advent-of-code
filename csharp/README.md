@@ -2,6 +2,7 @@
 These are a collection of AoC solutions (by year) that were solved using C#! I have linked my solutions to these challenges via the calenders below along with the stars I have gathered (two per puzzle, for a yearly total of 50).
 
 ---
+
 <table>
     <thead>
         <tr><th colspan=5><a href="https://adventofcode.com/2024" target="_blank">2024</a></th></tr>
@@ -41,6 +42,34 @@ These are a collection of AoC solutions (by year) that were solved using C#! I h
             <td align="center">23<br>⬚&nbsp;/&nbsp;⬚</td>
             <td align="center">24<br>⬚&nbsp;/&nbsp;⬚</td>
             <td align="center">25<br>⬚&nbsp;/&nbsp;⬚</td>
+        </tr>
+    </tbody>
+</table>
+
+---
+
+<table>
+    <thead>
+        <tr><th colspan=5><a href="https://adventofcode.com/2025" target="_blank">2025</a></th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center"><a href="src/y2025/Day01.cs">01</a><br>⭐/⭐</td>
+            <td align="center">02<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">03<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">04<br>⬚&nbsp;/&nbsp;⬚</td>
+        </tr>
+        <tr>
+            <td align="center">05<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">06<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">07<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">08<br>⬚&nbsp;/&nbsp;⬚</td>
+        </tr>
+        <tr>
+            <td align="center">09<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">10<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">11<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center">12<br>⬚&nbsp;/&nbsp;⬚</td>
         </tr>
     </tbody>
 </table>

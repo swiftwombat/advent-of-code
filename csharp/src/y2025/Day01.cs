@@ -16,7 +16,7 @@ public class Day01 : Day
         ForEachInputLine(line =>
         {
             int delta = ParseDelta(line);
-            dial += Mod(dial + delta, 100);
+            dial = Mod(dial + delta, 100);
             if (dial == 0) { password++; }
         });
         return password.ToString();
@@ -29,11 +29,10 @@ public class Day01 : Day
         ForEachInputLine(line =>
         {
             int delta = ParseDelta(line);
-            for (int i = dial; i != dial + delta; i += Math.Sign(delta))
-            {
-                if (i % 100 == 0) { password++; }
-            }
-            dial += Mod(dial + delta, 100);
+            int sign = Math.Sign(delta);
+            int normalisedDial = Mod(100 + dial * sign, 100);
+            password += (normalisedDial + delta * sign) / 100;
+            dial = Mod(dial + delta, 100);
         });
         return password.ToString();
     }
