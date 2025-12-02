@@ -8,5 +8,5 @@
 ### Post-2025
 | Year | Langauge | 1 - 12 | Total |
 | :--: | :------: | :---: | :----: |
-| [2025](csharp) | ![C#](https://img.shields.io/badge/C%23-239120) | ⭐&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚ | 0 |
+| [2025](csharp) | ![C#](https://img.shields.io/badge/C%23-239120) | ⭐⭐&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚&nbsp;⬚ | 0 |
 > See why AOC was changed to be [12 puzzles](https://adventofcode.com/2025/about#faq_num_days) per year.
