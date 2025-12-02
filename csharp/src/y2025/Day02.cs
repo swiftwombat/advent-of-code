@@ -40,9 +40,10 @@ public class Day02 : Day
         return sum.ToString();
     }
 
-    private static (long a, long b)[] ParseRanges(string ranges)
+    private static (long a, long b)[] ParseRanges(string input)
     {
-        return [.. ranges.Split(',').Select(ParseRange)];
+        string[] ranges = input.Split(',');
+        return [.. ranges.Select(ParseRange)];
     }
 
     private static (long a, long b) ParseRange(string range)
