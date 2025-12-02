@@ -9,47 +9,21 @@
  */
 public class Day02 : Day
 {
-    public override string PartOne()
+    public override string PartOne() { return SumInvalidIds(false); }
+
+    public override string PartTwo() { return SumInvalidIds(true); }
+
+    private string SumInvalidIds(bool isPartTwo)
     {
         long sum = 0;
-        (long a, long b)[] ranges = ParseRanges(GetInputLines()[0]);
-        foreach (var (a, b) in ranges)
+        string input = GetInputLines()[0];
+        string[] ids = [.. input.Split(',').SelectMany(ParseRange)];
+        foreach (string id in ids)
         {
-            for (long i = a; i <= b; i++)
-            {
-                string id = i.ToString();
-                if (id.Length % 2 != 0) { continue; }
-                if (IsInvalidId(id, 2)) { sum += i; }
-            }
+            int maxChunks = isPartTwo ? id.Length : 2;
+            if (IsInvalidId(id, maxChunks)) { sum += long.Parse(id); }
         }
         return sum.ToString();
-    }
-
-    public override string PartTwo()
-    {
-        long sum = 0;
-        (long a, long b)[] ranges = ParseRanges(GetInputLines()[0]);
-        foreach (var (a, b) in ranges)
-        {
-            for (long i = a; i <= b; i++)
-            {
-                string id = i.ToString();
-                if (IsInvalidId(id, id.Length)) { sum += i; }
-            }
-        }
-        return sum.ToString();
-    }
-
-    private static (long a, long b)[] ParseRanges(string input)
-    {
-        string[] ranges = input.Split(',');
-        return [.. ranges.Select(ParseRange)];
-    }
-
-    private static (long a, long b) ParseRange(string range)
-    {
-        long[] bounds = [.. range.Split('-').Select(long.Parse)];
-        return (bounds[0], bounds[1]);
     }
 
     private static bool IsInvalidId(string id, int maxChunks)
@@ -62,10 +36,16 @@ public class Day02 : Day
         return false;
     }
 
-    static string[] Chunkify(string str, int chunkCount)
+    static string[] Chunkify(string id, int chunkCount)
     {
-        int chunkSize = str.Length / chunkCount;
+        int chunkSize = id.Length / chunkCount;
         return [.. Enumerable.Range(0, chunkCount)
-            .Select(i => str.Substring(i * chunkSize, chunkSize))];
+            .Select(i => id.Substring(i * chunkSize, chunkSize))];
+    }
+
+    private static IEnumerable<string> ParseRange(string range)
+    {
+        long[] bounds = [.. range.Split('-').Select(long.Parse)];
+        for (long i = bounds[0]; i <= bounds[1]; i++) { yield return i.ToString(); }
     }
 }
