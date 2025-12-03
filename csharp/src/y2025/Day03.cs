@@ -18,27 +18,15 @@ public class Day03 : Day
         long sum = 0L;
         ForEachInputLine(batteries =>
         {
-            int prevIndex = -1;
-            long joltage = 0L;
-            List<Battery> sorted = SortAndIndex(batteries);
-            for (int i = batteryCount; i > 0; i--)
+            long totalJoltage = 0L;
+            for (int i = batteryCount - 1; i >= 0; i--)
             {
-                int maxIndex = batteries.Length - i + 1;
-                var battery = sorted.First(b => b.Index > prevIndex && b.Index < maxIndex);
-                prevIndex = battery.Index;
-                joltage = joltage * 10 + (battery.Joltage - '0');
+                char joltage = batteries[..^i].Max();
+                batteries = batteries[(batteries.IndexOf(joltage) + 1)..];
+                totalJoltage = totalJoltage * 10 + (joltage - '0');
             }
-            sum += joltage;
+            sum += totalJoltage;
         });
         return sum.ToString();
     }
-
-    private static List<Battery> SortAndIndex(string batteries)
-    {
-        return [.. batteries
-            .Select((j, i) => new Battery(j, i))
-            .OrderByDescending(b => b.Joltage)];
-    }
-
-    private record Battery(char Joltage, int Index);
 }
