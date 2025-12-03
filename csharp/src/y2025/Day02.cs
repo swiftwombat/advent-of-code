@@ -15,7 +15,7 @@ public class Day02 : Day
 
     private string SumInvalidIds(bool isPartTwo)
     {
-        long sum = 0;
+        long sum = 0L;
         string input = GetInputLines()[0];
         string[] ids = [.. input.Split(',').SelectMany(ParseRange)];
         foreach (string id in ids)
