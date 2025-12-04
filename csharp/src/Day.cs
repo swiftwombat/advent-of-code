@@ -58,23 +58,14 @@ public static class InputExtensions
     public static IEnumerable<char> NeighboursOf(
         this char[][] matrix, int i, int j, int r = 1)
     {
-        int rows = matrix.Length;
-        int cols = matrix[0].Length;
-
-        int minX = Math.Max(i - r, 0);
-        int maxX = Math.Min(i + r, rows - 1);
-        int minY = Math.Max(j - r, 0);
-        int maxY = Math.Min(j + r, cols - 1);
-
-        for (int x = minX; x <= maxX; x++)
-        {
-            var row = matrix[x];
-            for (int y = minY; y <= maxY; y++)
+        int m = matrix.Length;
+        int n = matrix[0].Length;
+        for (int x = Math.Max(i - r, 0); x <= Math.Min(i + r, m - 1); x++)
+            for (int y = Math.Max(j - r, 0); y <= Math.Min(j + r, n - 1); y++)
             {
                 if (x == i && y == j) { continue; }
-                yield return row[y];
+                yield return matrix[x][y];
             }
-        }
     }
 
     public static void Print(this char[][] matrix)
