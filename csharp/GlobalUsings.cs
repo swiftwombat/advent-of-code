@@ -1,1 +1,1 @@
-global using aoc;
+global using System.Text;
