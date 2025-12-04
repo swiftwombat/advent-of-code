@@ -57,7 +57,7 @@ These are a collection of AoC solutions (by year) that were solved using C#! I h
             <td align="center"><a href="src/y2025/Day01.cs">01</a><br>⭐/⭐</td>
             <td align="center"><a href="src/y2025/Day02.cs">02</a><br>⭐/⭐</td>
             <td align="center"><a href="src/y2025/Day03.cs">03</a><br>⭐/⭐</td>
-            <td align="center">04<br>⬚&nbsp;/&nbsp;⬚</td>
+            <td align="center"><a href="src/y2025/Day04.cs">04</a><br>⭐/⭐</td>
         </tr>
         <tr>
             <td align="center">05<br>⬚&nbsp;/&nbsp;⬚</td>

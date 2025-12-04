@@ -54,4 +54,17 @@ public static class InputExtensions
         foreach (var line in input) { matrix[i++] = line.ToCharArray(); }
         return matrix;
     }
+
+    public static IEnumerable<char> NeighboursOf(
+        this char[][] matrix, int i, int j, int r = 1)
+    {
+        int m = matrix[0].Length - 1;
+        int n = matrix[1].Length - 1;
+        for (int x = Math.Max(i - r, 0); x <= Math.Min(i + r, m); x++)
+            for (int y = Math.Max(j - r, 0); y <= Math.Min(j + r, n); y++)
+            {
+                if ((x, y) == (i, j)) continue;
+                yield return matrix[x][y];
+            }
+    }
 }
