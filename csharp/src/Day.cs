@@ -45,12 +45,29 @@ public abstract class Day
     }
 }
 
-public static class InputExtensions
+public static partial class InputExtensions
 {
-    public static char[][] ToCharMatrix(this string[] input)
+    [GeneratedRegex("\\d+")]
+    private static partial Regex DigitRegex();
+
+    public static IEnumerable<long> ParseLongs(this string str)
+    {
+        return DigitRegex().Matches(str).Select(m => long.Parse(m.Value));
+    }
+
+    public static IEnumerable<long> ParseLongs(this IEnumerable<string> input)
+    {
+        foreach (string line in input)
+        {
+            foreach (Match match in DigitRegex().Matches(line))
+                yield return long.Parse(match.Value);
+        }
+    }
+
+    public static char[][] ToCharMatrix(this IEnumerable<string> input)
     {
         int i = 0;
-        var matrix = new char[input.Length][];
+        var matrix = new char[input.Count()][];
         foreach (var line in input) { matrix[i++] = line.ToCharArray(); }
         return matrix;
     }
@@ -74,4 +91,5 @@ public static class InputExtensions
         foreach (var row in matrix) { sb.Append(row).Append('\n'); }
         Console.WriteLine(sb.ToString());
     }
+
 }
