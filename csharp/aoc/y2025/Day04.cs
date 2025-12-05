@@ -1,4 +1,4 @@
-﻿namespace aoc.y2025;
+﻿namespace csharp.aoc.y2025;
 
 /**
  * Day 4: Printing Department

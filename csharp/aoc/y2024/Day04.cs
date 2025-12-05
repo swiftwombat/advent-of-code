@@ -1,4 +1,4 @@
-﻿namespace aoc.y2024;
+﻿namespace csharp.aoc.y2024;
 
 /**
  * Day 4: Ceres Search

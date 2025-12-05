@@ -1,6 +1,7 @@
-﻿namespace aoc.y2024;
+﻿namespace csharp.aoc.y2024;
 
 using System.Text.RegularExpressions;
+using csharp.aoc;
 
 /**
  * Day 3: Mull It Over
@@ -9,6 +10,7 @@ using System.Text.RegularExpressions;
  * @author Zachary Cockshutt
  * @since  2024-12-03
  */
+
 public class Day03 : Day
 {
     public override string PartOne()
