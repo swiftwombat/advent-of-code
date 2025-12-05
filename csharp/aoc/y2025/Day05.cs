@@ -38,7 +38,7 @@ public class Day05 : Day
     private static Range<long>[] MergeRanges(Range<long>[] ranges)
     {
         var ordered = ranges.OrderBy(r => r.Start);
-        var merged = new List<Range<long>>(ordered.Count()) { ordered.First() };
+        var merged = new List<Range<long>> { ordered.First() };
         foreach (var range in ordered.Skip(1))
         {
             var current = merged[^1];
