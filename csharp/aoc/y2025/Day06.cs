@@ -14,7 +14,7 @@ public class Day06 : Day
         string[] sheet = GetInputLines();
         var operaters = sheet[^1].SplitByWhitespace().Select(op => op[0]).ToArray();
         var operands = sheet[..^1].Select(row => row.SplitByWhitespace().Select(long.Parse).ToArray()).ToArray();
-        return operaters.Select((op, col) => operands.Select(row => row[col]).Aggregate((a, b) => OperateOn(a, b, op))).Sum().ToString();
+        return operaters.Select((op, col) => operands.Select(row => row[col]).Aggregate((a, b) => DoOperate(a, b, op))).Sum().ToString();
     }
 
     public override string PartTwo()
@@ -29,13 +29,13 @@ public class Day06 : Day
             long operand = long.Parse(string.Join("", numbers).Trim());
             operands.Add(operand);
             if (col >= operators.Length || operators[col] == ' ') { continue; }
-            sum += operands.Aggregate((a, b) => OperateOn(a, b, operators[col]));
+            sum += operands.Aggregate((a, b) => DoOperate(a, b, operators[col]));
             operands = [];
             col--;
         }
         return sum.ToString();
     }
 
-    private static long OperateOn(long a, long b, char op)
+    private static long DoOperate(long a, long b, char op)
         => op == '*' ? (a * b) : (a + b);
 }
