@@ -42,6 +42,6 @@ public class Day05 : Day
     private static string[][] ParsePageLists(string[] input)
     {
         var pages = input.SkipWhile(x => !x.Equals("")).Skip(1);
-        return pages.Select(x => x.Split(",")).ToArray();
+        return [.. pages.Select(x => x.Split(","))];
     }
 }

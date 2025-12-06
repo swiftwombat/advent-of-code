@@ -12,7 +12,7 @@ public class Day04 : Day
     public override string PartOne()
     {
         long sum = 0L;
-        char[][] grid = GetInputLines().ToCharMatrix();
+        char[][] grid = GetInputLines().ToMatrix();
         sum += GetAccessibleCells(grid).Count;
         return sum.ToString();
     }
@@ -20,7 +20,7 @@ public class Day04 : Day
     public override string PartTwo()
     {
         long sum = 0L;
-        char[][] grid = GetInputLines().ToCharMatrix();
+        char[][] grid = GetInputLines().ToMatrix();
         List<(int i, int j)> accessible;
         do
         {

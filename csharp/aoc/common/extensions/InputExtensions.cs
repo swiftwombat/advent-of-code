@@ -2,13 +2,23 @@ namespace csharp.aoc.common.extensions;
 
 public static partial class InputExtensions
 {
-    public static char[][] ToCharMatrix(this IEnumerable<string> input)
+    // string processing
+
+    public static string[] SplitByWhitespace(this string line) =>
+        line.Split(Array.Empty<char>(), StringSplitOptions.RemoveEmptyEntries);
+
+    // matrix stuff
+
+    public static char[][] ToMatrix(this IEnumerable<string> input)
     {
         int i = 0;
         var matrix = new char[input.Count()][];
         foreach (var line in input) { matrix[i++] = line.ToCharArray(); }
         return matrix;
     }
+
+    public static char[] GetColumn(this char[][] matrix, int col)
+        => [.. matrix.Where(row => row.Length > col).Select(row => row[col])];
 
     public static IEnumerable<char> NeighboursOf(
         this char[][] matrix, int i, int j, int r = 1)

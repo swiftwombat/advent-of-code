@@ -14,7 +14,7 @@ public class Day02 : Day
         long safeCount = 0L;
         ForEachInputLine(line =>
         {
-            int[] levels = line.Split(" ").Select(int.Parse).ToArray();
+            int[] levels = [.. line.Split(" ").Select(int.Parse)];
             if (IsSafe(levels)) { safeCount++; }
         });
         return safeCount.ToString();
@@ -25,11 +25,11 @@ public class Day02 : Day
         long safeCount = 0L;
         ForEachInputLine(line =>
         {
-            int[] levels = line.Split(" ").Select(int.Parse).ToArray();
+            int[] levels = [.. line.Split(" ").Select(int.Parse)];
             if (IsSafe(levels)) { safeCount++; return; }
             for (int i = 0; i < levels.Length; i++)
             {
-                int[] copy = levels.Where((v, j) => j != i).ToArray();
+                int[] copy = [.. levels.Where((v, j) => j != i)];
                 if (IsSafe(copy)) { safeCount++; return; }
             }
         });

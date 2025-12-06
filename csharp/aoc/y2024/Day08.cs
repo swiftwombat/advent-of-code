@@ -11,7 +11,7 @@ public class Day08 : Day
 {
     public override string PartOne()
     {
-        char[][] map = GetInputLines().ToCharMatrix();
+        char[][] map = GetInputLines().ToMatrix();
         var positions = FindPositions(map);
         var antinodes = new HashSet<(int, int)>();
         foreach (var set in positions)
@@ -27,7 +27,7 @@ public class Day08 : Day
 
     public override string PartTwo()
     {
-        char[][] map = GetInputLines().ToCharMatrix();
+        char[][] map = GetInputLines().ToMatrix();
         var positions = FindPositions(map);
         var antinodes = new HashSet<(int, int)>();
         foreach (var set in positions)
