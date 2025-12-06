@@ -9,16 +9,16 @@ These are a collection of AoC solutions (by year) that were solved using C#! I h
     </thead>
     <tbody>
         <tr>
-            <td align="center"><a href="src/y2024/Day01.cs">01</a><br>★/★</td>
-            <td align="center"><a href="src/y2024/Day02.cs">02</a><br>★/★</td>
-            <td align="center"><a href="src/y2024/Day03.cs">03</a><br>★/★</td>
-            <td align="center"><a href="src/y2024/Day04.cs">04</a><br>★/★</td>
-            <td align="center"><a href="src/y2024/Day05.cs">05</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2024/Day01.cs">01</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2024/Day02.cs">02</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2024/Day03.cs">03</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2024/Day04.cs">04</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2024/Day05.cs">05</a><br>★/★</td>
         </tr>
         <tr>
-            <td align="center"><a href="src/y2024/Day06.cs">06</a><br>★/★</td>
-            <td align="center"><a href="src/y2024/Day07.cs">07</a><br>★/★</td>
-            <td align="center"><a href="src/y2024/Day08.cs">08</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2024/Day06.cs">06</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2024/Day07.cs">07</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2024/Day08.cs">08</a><br>★/★</td>
             <td align="center">09<br>☆/☆</td>
             <td align="center">10<br>☆/☆</td>
         </tr>
@@ -54,14 +54,14 @@ These are a collection of AoC solutions (by year) that were solved using C#! I h
     </thead>
     <tbody>
         <tr>
-            <td align="center"><a href="src/y2025/Day01.cs">01</a><br>★/★</td>
-            <td align="center"><a href="src/y2025/Day02.cs">02</a><br>★/★</td>
-            <td align="center"><a href="src/y2025/Day03.cs">03</a><br>★/★</td>
-            <td align="center"><a href="src/y2025/Day04.cs">04</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2025/Day01.cs">01</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2025/Day02.cs">02</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2025/Day03.cs">03</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2025/Day04.cs">04</a><br>★/★</td>
         </tr>
         <tr>
-            <td align="center"><a href="src/y2025/Day05.cs">05</a><br>★/★</td>
-            <td align="center"><a href="src/y2025/Day06.cs">06</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2025/Day05.cs">05</a><br>★/★</td>
+            <td align="center"><a href="aoc/y2025/Day06.cs">06</a><br>★/★</td>
             <td align="center">07<br>☆/☆</td>
             <td align="center">08<br>☆/☆</td>
         </tr>
