@@ -17,17 +17,19 @@ public class Day08 : Day
 
     private long SolveJunctionGraph(bool isPartTwo)
     {
+        int count = 0;
         var junctions = ParseVectors(GetInputLines());
+        var circuits = new List<HashSet<Vector3>>();
         var distances = new PriorityQueue<(Vector3, Vector3), float>();
         for (int i = 0; i < junctions.Length; ++i)
+        {
             for (int j = i + 1; j < junctions.Length; ++j)
             {
                 var a = junctions[i];
                 var b = junctions[j];
                 distances.Enqueue((a, b), Vector3.Distance(a, b));
             }
-        int count = 0;
-        var circuits = new List<HashSet<Vector3>>();
+        }
         while (distances.TryDequeue(out (Vector3 a, Vector3 b) pair, out float _))
         {
             if (count++ == 1000 && !isPartTwo) { break; }
