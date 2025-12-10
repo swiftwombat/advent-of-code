@@ -1,5 +1,3 @@
-using System.Numerics;
-
 namespace csharp.aoc.common.models;
 
 public record Range<T> where T : INumber<T>

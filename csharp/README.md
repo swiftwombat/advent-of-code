@@ -66,7 +66,7 @@ These are a collection of AoC solutions (by year) that were solved using C#! I h
             <td align="center"><a href="aoc/y2025/Day08.cs">08</a><br>★/★</td>
         </tr>
         <tr>
-            <td align="center">09<br>☆/☆</td>
+            <td align="center"><a href="aoc/y2025/Day09.cs">09</a><br>★/★</td>
             <td align="center">10<br>☆/☆</td>
             <td align="center">11<br>☆/☆</td>
             <td align="center">12<br>☆/☆</td>
