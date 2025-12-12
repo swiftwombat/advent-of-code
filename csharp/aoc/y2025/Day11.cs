@@ -13,7 +13,8 @@ public class Day11 : Day
     {
         Server[] servers = ParseServers(GetInputLines());
         Server root = servers.First(s => s.Id.Equals("you"));
-        return CountOutputPaths(root, servers).ToString();
+        var cache = new Dictionary<(string id, bool dac, bool fft), long>();
+        return CountOutputPaths(root, servers, false, false, false, cache).ToString();
     }
 
     public override string PartTwo()
@@ -21,23 +22,11 @@ public class Day11 : Day
         Server[] servers = ParseServers(GetInputLines());
         Server root = servers.First(s => s.Id.Equals("svr"));
         var cache = new Dictionary<(string id, bool dac, bool fft), long>();
-        return CountOutputPaths(root, servers, false, false, cache).ToString();
-    }
-
-    private static long CountOutputPaths(Server root, Server[] servers)
-    {
-        long paths = 0L;
-        if (root.Outputs[0].Equals("out")) { return 1L; }
-        foreach (var output in root.Outputs)
-        {
-            var next = servers.First(s => s.Id.Equals(output));
-            paths += CountOutputPaths(next, servers);
-        }
-        return paths;
+        return CountOutputPaths(root, servers, true, false, false, cache).ToString();
     }
 
     private static long CountOutputPaths(
-        Server root, Server[] servers, bool dac, bool fft, Dictionary<(string, bool, bool), long> cache)
+        Server root, Server[] servers, bool isPartTwo, bool dac, bool fft, Dictionary<(string, bool, bool), long> cache)
     {
         dac |= root.Id.Equals("dac");
         fft |= root.Id.Equals("fft");
@@ -46,7 +35,7 @@ public class Day11 : Day
 
         if (root.Outputs[0].Equals("out"))
         {
-            long rs = dac && fft ? 1L : 0L;
+            long rs = !isPartTwo || (dac && fft) ? 1L : 0L;
             cache[key] = rs;
             return rs;
         }
@@ -54,7 +43,7 @@ public class Day11 : Day
         foreach (var output in root.Outputs)
         {
             var next = servers.First(s => s.Id.Equals(output));
-            paths += CountOutputPaths(next, servers, dac, fft, cache);
+            paths += CountOutputPaths(next, servers, isPartTwo, dac, fft, cache);
         }
         cache[key] = paths;
         return paths;
